@@ -3,107 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Functional Wellness | Coaching for Professional Women</title>
+    <title>Restore & Thrive | The Vitality Protocol</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --sage: #8A9A5B;
+            --dark-sage: #6B7944;
             --cream: #F9F8F4;
             --charcoal: #333333;
+            --white: #ffffff;
         }
+
+        * { box-sizing: border-box; }
 
         body {
             margin: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--cream);
             color: var(--charcoal);
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
+        /* Navigation */
         header {
-            background-color: white;
-            padding: 2rem 10%;
-            text-align: center;
-            border-bottom: 1px solid #eee;
+            background-color: var(--white);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
         }
 
-        h1 {
+        .logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin: 0;
+            font-size: 1.5rem;
             color: var(--sage);
+            text-decoration: none;
         }
 
+        /* Hero Section */
         .hero {
-            padding: 5rem 10%;
+            padding: 8rem 10%;
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
+            background-color: var(--white);
         }
 
-        .hero h2 {
+        .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: clamp(2.5rem, 5vw, 4rem);
             margin-bottom: 1.5rem;
+            line-height: 1.1;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #555;
         }
 
+        /* Pain Points Section */
+        .pain-points {
+            padding: 5rem 10%;
+            background-color: var(--cream);
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+
+        .card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--sage);
+        }
+
+        /* The Protocol Section */
+        .protocol {
+            padding: 6rem 10%;
+            background-color: var(--white);
+        }
+
+        .phase {
+            margin-bottom: 4rem;
+            border-left: 3px solid var(--sage);
+            padding-left: 2rem;
+        }
+
+        .phase h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-meta {
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--sage);
+            font-size: 0.9rem;
+        }
+
+        /* Buttons */
         .cta-button {
             background-color: var(--sage);
-            color: white;
-            padding: 1rem 2.5rem;
+            color: var(--white);
+            padding: 1.2rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
             font-weight: 600;
-            transition: opacity 0.3s;
             display: inline-block;
+            transition: all 0.3s ease;
         }
 
         .cta-button:hover {
-            opacity: 0.9;
+            background-color: var(--dark-sage);
+            transform: translateY(-2px);
         }
 
-        #booking {
+        /* Supplement Section */
+        .supplements {
+            background-color: var(--sage);
+            color: var(--white);
             padding: 5rem 10%;
             text-align: center;
-            background-color: white;
         }
 
+        .supplements h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+
         footer {
-            padding: 3rem;
+            padding: 4rem 10%;
             text-align: center;
             font-size: 0.9rem;
-            color: #999;
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero { padding: 4rem 5%; }
+            header { padding: 1rem 5%; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Restore & Thrive</h1>
+        <a href="#" class="logo">Restore & Thrive</a>
+        <a href="#booking" style="color: var(--sage); text-decoration: none; font-weight: 600;">Book Now</a>
     </header>
 
     <section class="hero">
-        <h2>From Burnout to Balanced.</h2>
-        <p>Functional wellness coaching tailored for the high-performing woman. Reclaim your energy, optimize your hormones, and find your flow again.</p>
-        <a href="#booking" class="cta-button">Book Your Discovery Call</a>
+        <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--sage); margin-bottom: 1rem;">Functional Wellness for High-Performers</p>
+        <h1>From Burnout to Balanced.</h1>
+        <p>Master your hormones, optimize your brain health, and reclaim your energy using a data-driven, root-cause approach. Your drive isn’t the problem—your physiological foundation is.</p>
+        <a href="#booking" class="cta-button">Apply for The Vitality Protocol</a>
     </section>
 
-    <section id="booking">
-        <h3 style="font-family: 'Playfair Display', serif; font-size: 2.2rem; margin-bottom: 1rem; color: var(--sage);">Ready to reclaim your energy?</h3>
-        <p style="margin-bottom: 2.5rem; color: #666; font-size: 1.1rem;">Select a time that works for you for a complimentary 20-minute wellness discovery call.</p>
+    <section class="pain-points">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">Is your drive costing you your health?</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>The Career Cycle</h3>
+                <p>You’re crushing your career, but your cycle is a nightmare of burnout and brain fog.</p>
+            </div>
+            <div class="card">
+                <h3>The Stimulant Loop</h3>
+                <p>You rely on caffeine to focus and wine to wind down, masking a dysregulated nervous system.</p>
+            </div>
+            <div class="card">
+                <h3>The Perfectionist Tax</h3>
+                <p>Your high standards have left your body in a constant state of "fight or flight."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="protocol">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 4rem;">The 90-Day Vitality Protocol</h2>
+        
+        <div class="phase">
+            <div class="phase-meta">Phase 1: The Bio-Audit (Weeks 1-3)</div>
+            <h3>Stabilizing the Foundation</h3>
+            <p>We stop the bleed. By auditing sleep quality, hydration, and caffeine intake, we identify exactly where your perfectionism is causing physical stress. We establish the biological "Basics" so your body feels safe enough to heal.</p>
+        </div>
+
+        <div class="phase">
+            <div class="phase-meta">Phase 2: Alignment (Weeks 4-8)</div>
+            <h3>Hormonal & Cognitive Optimization</h3>
+            <p>We align your work with your biology. Using cycle-syncing strategies and targeted neurotransmitter support, we adjust your exercise, nutrition, and high-intensity tasks to match your 28-day hormonal shifts.</p>
+        </div>
+
+        <div class="phase">
+            <div class="phase-meta">Phase 3: Architecture (Weeks 9-12)</div>
+            <h3>The Sustainable High-Performer</h3>
+            <p>We build your long-term toolbox. You'll walk away with a custom "Bio-Blueprint" for high-stress events, ensuring you stay focused and energized without the crash.</p>
+        </div>
+    </section>
+
+    <section class="supplements">
+        <h2>Evidence-Based Support</h2>
+        <p style="max-width: 600px; margin: 0 auto 2rem;">We use research-backed tools like Graymatter for cognitive focus and Thorne Magnesium for nervous system regulation to support your brain health safely and effectively.</p>
+    </section>
+
+    <section id="booking" style="padding: 6rem 10%; text-align: center;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Ready to find your flow?</h2>
+        <p style="margin-bottom: 3rem; color: #666;">Book a complimentary 20-minute Wellness Discovery Call to see if the Vitality Protocol is right for you.</p>
         <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" target="_blank" class="cta-button">
             View Available Times
         </a>
     </section>
 
     <footer>
-        <p>&copy; 2026 Restore & Thrive Functional Wellness. All Rights Reserved.</p>
+        <p>&copy; 2026 Restore & Thrive Functional Wellness. <br> 
+        Helping women manage perfectionist patterns and physiological stress.</p>
     </footer>
 
 </body>
