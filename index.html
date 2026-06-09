@@ -308,6 +308,57 @@
     line-height: 1.6;
   }
 
+  /* WHOLE PICTURE */
+  .whole-picture { background: var(--cream); }
+
+  .wp-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .wp-item {
+    background: var(--white);
+    border: 0.5px solid var(--mist);
+    padding: 1.75rem;
+    border-radius: 2px;
+  }
+
+  .wp-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .wp-item p {
+    font-size: 0.88rem;
+    color: var(--soil);
+    opacity: 0.8;
+    line-height: 1.75;
+  }
+
+  .wp-note {
+    background: var(--linen);
+    border-left: 2px solid var(--clay);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 2px 2px 0;
+    font-size: 0.85rem;
+    color: var(--bark);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
   /* STORY */
   .story { background: var(--cream); }
 
@@ -645,6 +696,36 @@
   </div>
 </section>
 
+<!-- WHOLE PICTURE -->
+<section class="whole-picture" id="whole-picture">
+  <div class="container">
+    <p class="section-eyebrow">What makes this different</p>
+    <h2 class="section-title">We look at things most<br>coaches <em>never ask about.</em></h2>
+    <p class="wp-intro">Real root cause work means seeing the full picture. That includes the things that often get left out of wellness conversations entirely.</p>
+    <div class="wp-grid">
+      <div class="wp-item">
+        <h3>What is actually in your system</h3>
+        <p>Medications, supplements, caffeine, nicotine, alcohol. Everything affects your hormones, your nervous system, your sleep, and your mood. We look at the full chemical landscape, not just the wellness-approved parts.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The conversations your doctor hasn't had with you</h3>
+        <p>SSRIs and stimulants can affect your energy, libido, sleep architecture, and emotional range in ways nobody explains. We educate, we explore, and we help you bring better questions to your care team.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The patterns that feel shameful</h3>
+        <p>Impulsive spending. Emotional eating. Reaching for your phone the moment things get uncomfortable. These are not character flaws. They are nervous system responses. We find the root.</p>
+      </div>
+      <div class="wp-item">
+        <h3>Your body's actual baseline</h3>
+        <p>Before we add anything, we look at what you are already working with. Sleep debt, hydration, cycle patterns, movement habits. The foundation has to be honest before it can be strong.</p>
+      </div>
+    </div>
+    <div class="wp-note">
+      A note on scope: I am a wellness coach in training, not a doctor or therapist. I will never advise you to change or stop a medication. What I will do is help you understand your body well enough to ask better questions of the people who can.
+    </div>
+  </div>
+</section>
+
 <!-- STORY -->
 <section class="story" id="story">
   <div class="container">
@@ -728,8 +809,8 @@
     <p class="section-eyebrow">Ready to begin</p>
     <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
     <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
-    <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" class="booking-cta">Book a discovery call</a>
-    <p class="booking-note">Complimentary 20 minutes, no commitment required</p>
+    <a href="intake.html" class="booking-cta">Fill out your intake form</a>
+    <p class="booking-note">Or book a discovery call first: <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" style="color: var(--clay); text-decoration: underline; font-style: italic;">schedule a free 20-minute chat</a></p>
   </div>
 </section>
 
