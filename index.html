@@ -1,233 +1,706 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restore & Thrive | The Vitality Protocol</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --sage: #8A9A5B;
-            --dark-sage: #6B7944;
-            --cream: #F9F8F4;
-            --charcoal: #333333;
-            --white: #ffffff;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seeded in Curiosity | Jordan Maher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7A9E7E;
+    --clay: #A0855B;
+    --bark: #6B4E3D;
+    --cream: #F5F0E8;
+    --linen: #EDE8DE;
+    --soil: #2C2018;
+    --mist: #D4C9B8;
+    --white: #FDFAF6;
+  }
 
-        * { box-sizing: border-box; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            background-color: var(--cream);
-            color: var(--charcoal);
-            line-height: 1.7;
-        }
+  html { scroll-behavior: smooth; }
 
-        /* Navigation */
-        header {
-            background-color: var(--white);
-            padding: 1.5rem 10%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--soil);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--sage);
-            text-decoration: none;
-        }
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--mist);
+  }
 
-        /* Hero Section */
-        .hero {
-            padding: 8rem 10%;
-            text-align: center;
-            background-color: var(--white);
-        }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--soil);
+    text-decoration: none;
+  }
 
-        .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            margin-bottom: 1.5rem;
-            line-height: 1.1;
-        }
+  .nav-logo span {
+    color: var(--sage);
+  }
 
-        .hero p {
-            font-size: 1.25rem;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-            color: #555;
-        }
+  .nav-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bark);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0.6rem 1.4rem;
+    border: 0.5px solid var(--clay);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
 
-        /* Pain Points Section */
-        .pain-points {
-            padding: 5rem 10%;
-            background-color: var(--cream);
-            text-align: center;
-        }
+  .nav-link:hover {
+    background: var(--clay);
+    color: var(--white);
+  }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
 
-        .card {
-            background: var(--white);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
-        }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 55%;
+    height: 120%;
+    background: var(--linen);
+    border-radius: 0 0 0 60%;
+    z-index: 0;
+  }
 
-        .card h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--sage);
-        }
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
 
-        /* The Protocol Section */
-        .protocol {
-            padding: 6rem 10%;
-            background-color: var(--white);
-        }
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
 
-        .phase {
-            margin-bottom: 4rem;
-            border-left: 3px solid var(--sage);
-            padding-left: 2rem;
-        }
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
 
-        .phase h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
+  .hero-title em {
+    font-style: italic;
+    color: var(--clay);
+  }
 
-        .phase-meta {
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: var(--sage);
-            font-size: 0.9rem;
-        }
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
 
-        /* Buttons */
-        .cta-button {
-            background-color: var(--sage);
-            color: var(--white);
-            padding: 1.2rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
+  .hero-cta {
+    display: inline-block;
+    background: var(--bark);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
 
-        .cta-button:hover {
-            background-color: var(--dark-sage);
-            transform: translateY(-2px);
-        }
+  .hero-cta:hover {
+    background: var(--soil);
+  }
 
-        /* Supplement Section */
-        .supplements {
-            background-color: var(--sage);
-            color: var(--white);
-            padding: 5rem 10%;
-            text-align: center;
-        }
+  .hero-seed {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    text-align: center;
+  }
 
-        .supplements h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+  .seed-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 0.5px solid var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
 
-        footer {
-            padding: 4rem 10%;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #888;
-        }
+  .seed-inner {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: var(--linen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
 
-        @media (max-width: 768px) {
-            .hero { padding: 4rem 5%; }
-            header { padding: 1rem 5%; }
-        }
-    </style>
+  .seed-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--clay);
+    line-height: 2.4;
+    letter-spacing: 0.02em;
+  }
+
+  /* SECTIONS */
+  section {
+    padding: 6rem 2.5rem;
+  }
+
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  /* FOR YOU */
+  .for-you {
+    background: var(--linen);
+  }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pain-card {
+    background: var(--white);
+    border: 0.5px solid var(--mist);
+    padding: 1.75rem;
+    border-radius: 2px;
+  }
+
+  .pain-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .pain-card p {
+    font-size: 0.9rem;
+    color: var(--soil);
+    opacity: 0.8;
+    line-height: 1.7;
+  }
+
+  /* STORY */
+  .story {
+    background: var(--white);
+  }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .story-text p strong {
+    font-weight: 500;
+    color: var(--bark);
+  }
+
+  .story-visual {
+    position: relative;
+  }
+
+  .story-quote {
+    background: var(--linen);
+    padding: 2.5rem;
+    border-left: 2px solid var(--sage);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .story-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .story-quote cite {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-style: normal;
+  }
+
+  /* METHOD */
+  .method {
+    background: var(--soil);
+    color: var(--cream);
+  }
+
+  .method .section-title {
+    color: var(--cream);
+  }
+
+  .method .section-eyebrow {
+    color: var(--sage);
+  }
+
+  .method-intro {
+    font-size: 1.05rem;
+    color: var(--mist);
+    max-width: 580px;
+    margin-bottom: 3.5rem;
+    line-height: 1.8;
+  }
+
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 0.5px solid rgba(255,255,255,0.1);
+  }
+
+  .phase {
+    background: var(--soil);
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+
+  .phase:hover {
+    background: #3a2d20;
+  }
+
+  .phase-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--sage);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .phase-weeks {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase p {
+    font-size: 0.88rem;
+    color: var(--mist);
+    line-height: 1.7;
+  }
+
+  .method-note {
+    margin-top: 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(122, 158, 126, 0.1);
+    border-left: 2px solid var(--sage);
+    font-size: 0.9rem;
+    color: var(--mist);
+    line-height: 1.7;
+  }
+
+  .method-note strong {
+    color: var(--sage);
+    font-weight: 400;
+  }
+
+  /* ABOUT */
+  .about {
+    background: var(--cream);
+  }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-left {
+    position: sticky;
+    top: 6rem;
+  }
+
+  .about-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--soil);
+    margin-bottom: 0.25rem;
+  }
+
+  .about-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-credentials {
+    list-style: none;
+    padding: 0;
+  }
+
+  .about-credentials li {
+    font-size: 0.85rem;
+    color: var(--bark);
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid var(--mist);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .about-credentials li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .about-right p strong {
+    font-weight: 500;
+    color: var(--bark);
+  }
+
+  /* BOOKING */
+  .booking {
+    background: var(--white);
+    text-align: center;
+  }
+
+  .booking .container {
+    max-width: 640px;
+  }
+
+  .booking .section-title {
+    margin-bottom: 1rem;
+  }
+
+  .booking-sub {
+    font-size: 1rem;
+    color: var(--bark);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .booking-cta {
+    display: inline-block;
+    background: var(--bark);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 1.1rem 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+    margin-bottom: 1.25rem;
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 1.25rem;
+  }
+
+  .booking-cta:hover {
+    background: var(--soil);
+  }
+
+  .booking-note {
+    font-size: 0.8rem;
+    color: var(--mist);
+    letter-spacing: 0.05em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--soil);
+    color: var(--mist);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span {
+    color: var(--sage);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    .hero::before { display: none; }
+    .hero-seed { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .story-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-left { position: static; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo">Restore & Thrive</a>
-        <a href="#booking" style="color: var(--sage); text-decoration: none; font-weight: 600;">Book Now</a>
-    </header>
+<nav>
+  <a href="#" class="nav-logo">Seeded in <span>Curiosity</span></a>
+  <a href="#booking" class="nav-link">Work with me</a>
+</nav>
 
-    <section class="hero">
-        <p style="text-transform: uppercase; letter-spacing: 2px; font-weight: 600; color: var(--sage); margin-bottom: 1rem;">Functional Wellness for High-Performers</p>
-        <h1>From Burnout to Balanced.</h1>
-        <p>Master your hormones, optimize your brain health, and reclaim your energy using a data-driven, root-cause approach. Your drive isn’t the problem—your physiological foundation is.</p>
-        <a href="#booking" class="cta-button">Apply for The Vitality Protocol</a>
-    </section>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Holistic wellness coaching for women</p>
+    <h1 class="hero-title">Every answer starts<br>with a <em>better question.</em></h1>
+    <p class="hero-sub">You don't need another program that tells you what to do. You need someone who helps you figure out why — and builds something that actually lasts.</p>
+    <a href="#booking" class="hero-cta">Start the conversation</a>
+  </div>
+  <div class="hero-seed">
+    <div class="seed-circle">
+      <div class="seed-inner">
+        <p class="seed-word">curiosity</p>
+        <p class="seed-word">roots</p>
+        <p class="seed-word">growth</p>
+        <p class="seed-word">becoming</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="pain-points">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">Is your drive costing you your health?</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>The Career Cycle</h3>
-                <p>You’re crushing your career, but your cycle is a nightmare of burnout and brain fog.</p>
-            </div>
-            <div class="card">
-                <h3>The Stimulant Loop</h3>
-                <p>You rely on caffeine to focus and wine to wind down, masking a dysregulated nervous system.</p>
-            </div>
-            <div class="card">
-                <h3>The Perfectionist Tax</h3>
-                <p>Your high standards have left your body in a constant state of "fight or flight."</p>
-            </div>
+<!-- FOR YOU -->
+<section class="for-you" id="for-you">
+  <div class="container">
+    <p class="section-eyebrow">You might be here because</p>
+    <h2 class="section-title">You're doing everything right<br>and still feel <em>lost.</em></h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>You're high-achieving and quietly burned out</h3>
+        <p>You've hit every external milestone and still lie awake wondering if this is it. The drive is real. The exhaustion is realer.</p>
+      </div>
+      <div class="pain-card">
+        <h3>You know something needs to change — you just don't know what</h3>
+        <p>Every self-help book, every podcast, every journal prompt gives you more information and less clarity. You need someone to help you actually dig.</p>
+      </div>
+      <div class="pain-card">
+        <h3>You've tried the surface-level fixes</h3>
+        <p>The supplements, the routines, the apps. They help for a week. Then life happens. Because the root was never addressed.</p>
+      </div>
+      <div class="pain-card">
+        <h3>You want tools you own forever — not a coach you depend on</h3>
+        <p>You don't want someone to have all the answers. You want to learn how to find them yourself, every time life brings a new season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-layout">
+      <div class="story-text">
+        <p class="section-eyebrow">Why this work</p>
+        <h2 class="section-title">I grew up in a town of 700 people where <em>access didn't exist.</em></h2>
+        <p>Mental health care, wellness support, anyone to tell you that what you were feeling made sense — none of it was there. That experience shaped everything about why I do this work.</p>
+        <p>For over two years I've been working in behavioral health, building the kinds of clinical relationships that actually move people toward care. I've sat with hundreds of providers, families, and systems trying to bridge the gap between where people are and where they need to be.</p>
+        <p>But I kept seeing the same thing: <strong>people getting connected to clinical care while the deeper pieces went completely untreated.</strong> The relationship with self, body, identity, and purpose. That gap is where I want to build.</p>
+        <p>I'm currently training in motivational interviewing — a framework built entirely on the belief that <strong>you already have the answers inside you.</strong> My job is to help you find them.</p>
+      </div>
+      <div class="story-visual">
+        <div class="story-quote">
+          <blockquote>"Real transformation happens when someone finally feels seen — not just treated."</blockquote>
+          <cite>Jordan Maher, founder</cite>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section class="protocol">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; text-align: center; margin-bottom: 4rem;">The 90-Day Vitality Protocol</h2>
-        
-        <div class="phase">
-            <div class="phase-meta">Phase 1: The Bio-Audit (Weeks 1-3)</div>
-            <h3>Stabilizing the Foundation</h3>
-            <p>We stop the bleed. By auditing sleep quality, hydration, and caffeine intake, we identify exactly where your perfectionism is causing physical stress. We establish the biological "Basics" so your body feels safe enough to heal.</p>
-        </div>
+<!-- METHOD -->
+<section class="method" id="method">
+  <div class="container">
+    <p class="section-eyebrow">The work</p>
+    <h2 class="section-title">A rooted process.<br>Tools you keep forever.</h2>
+    <p class="method-intro">This isn't a program where you check boxes and hope for the best. We go to the root, build a real solution together, and you leave with something that belongs to you — not a dependency on me.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-num">01</div>
+        <p class="phase-weeks">Weeks 1 — 3</p>
+        <h3>The Root Audit</h3>
+        <p>We get honest about what's actually driving the patterns. Not the symptoms — the source. Through curiosity-led conversation, we map what's underneath.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-num">02</div>
+        <p class="phase-weeks">Weeks 4 — 8</p>
+        <h3>Building the Blueprint</h3>
+        <p>We design a real, specific solution for your life — not a generic wellness plan. Grounded in what your body, mind, and circumstances actually need right now.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-num">03</div>
+        <p class="phase-weeks">Weeks 9 — 12</p>
+        <h3>Rooted in Action</h3>
+        <p>You practice using the tools. We refine. You build confidence in your own ability to navigate — so when the next season comes, you know how to move through it.</p>
+      </div>
+    </div>
+    <p class="method-note"><strong>A note on how this works:</strong> When you complete the program, you leave with tools that are yours. You don't need me to function. But life brings new seasons — and when the next one arrives, I'm here. You come back when you're ready, not because you're stuck.</p>
+  </div>
+</section>
 
-        <div class="phase">
-            <div class="phase-meta">Phase 2: Alignment (Weeks 4-8)</div>
-            <h3>Hormonal & Cognitive Optimization</h3>
-            <p>We align your work with your biology. Using cycle-syncing strategies and targeted neurotransmitter support, we adjust your exercise, nutrition, and high-intensity tasks to match your 28-day hormonal shifts.</p>
-        </div>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-left">
+        <h2 class="about-name">Jordan Maher</h2>
+        <p class="about-title">Founder, Seeded in Curiosity</p>
+        <ul class="about-credentials">
+          <li>Clinical Partnerships, Behavioral Health</li>
+          <li>Motivational Interviewing, Psychwire (in progress)</li>
+          <li>BS Marketing, Illinois State University</li>
+          <li>Mental Health Access Advocate</li>
+          <li>Women's Empowerment & Holistic Wellness</li>
+        </ul>
+      </div>
+      <div class="about-right">
+        <p>I came into behavioral health because I believe access to care is a human right — not a privilege. Growing up in a small town with none of it taught me that early. It also taught me what it feels like to figure things out without a roadmap.</p>
+        <p>I've spent the last two years building real relationships in the clinical world — working alongside therapists, counselors, and community organizations to connect people to the care they need. Along the way, <strong>the eating disorder and whole-person wellness community kept showing up around me.</strong> I'm not a believer in coincidences.</p>
+        <p>My approach is rooted in motivational interviewing — a framework that believes you are the expert on your own life. I'm not here to tell you what to do. I'm here to ask better questions until <strong>you find what's already true for you.</strong></p>
+        <p>I'm building this for the woman who is smart, capable, and still somehow stuck. The one who knows something needs to change but can't quite name it yet. The curious one. <strong>You're in the right place.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="phase">
-            <div class="phase-meta">Phase 3: Architecture (Weeks 9-12)</div>
-            <h3>The Sustainable High-Performer</h3>
-            <p>We build your long-term toolbox. You'll walk away with a custom "Bio-Blueprint" for high-stress events, ensuring you stay focused and energized without the crash.</p>
-        </div>
-    </section>
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="container">
+    <p class="section-eyebrow">Ready to begin</p>
+    <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
+    <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
+    <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" class="booking-cta">Book a discovery call</a>
+    <p class="booking-note">Complimentary 20 minutes — no commitment required</p>
+  </div>
+</section>
 
-    <section class="supplements">
-        <h2>Evidence-Based Support</h2>
-        <p style="max-width: 600px; margin: 0 auto 2rem;">We use research-backed tools like Graymatter for cognitive focus and Thorne Magnesium for nervous system regulation to support your brain health safely and effectively.</p>
-    </section>
-
-    <section id="booking" style="padding: 6rem 10%; text-align: center;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 1rem;">Ready to find your flow?</h2>
-        <p style="margin-bottom: 3rem; color: #666;">Book a complimentary 20-minute Wellness Discovery Call to see if the Vitality Protocol is right for you.</p>
-        <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" target="_blank" class="cta-button">
-            View Available Times
-        </a>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 Restore & Thrive Functional Wellness. <br> 
-        Helping women manage perfectionist patterns and physiological stress.</p>
-    </footer>
+<footer>
+  <p>© 2026 <span>Seeded in Curiosity</span> — Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
+</footer>
 
 </body>
 </html>
