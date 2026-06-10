@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The $10 Coffee When You're in Debt | Seeded in Curiosity</title>
+<meta name="description" content="You know it doesn't make sense. You do it anyway. The psychology behind why we dig the hole deeper when we feel most stuck, and what is actually happening in your nervous system.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7A9E7E;
+    --clay: #A0855B;
+    --bark: #6B4E3D;
+    --cream: #F5F0E8;
+    --linen: #EDE8DE;
+    --soil: #2C2018;
+    --mist: #D4C9B8;
+    --white: #FDFAF6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--soil);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--mist);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--soil);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--sage); }
+
+  .nav-back {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s;
+  }
+
+  .nav-back:hover { color: var(--soil); }
+
+  /* HERO */
+  .post-hero {
+    padding: 8rem 2.5rem 4rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .post-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .post-eyebrow span {
+    width: 24px;
+    height: 0.5px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .post-title em { font-style: italic; color: var(--clay); }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 0.5px solid var(--mist);
+    border-bottom: 0.5px solid var(--mist);
+    margin-bottom: 3rem;
+  }
+
+  .post-author {
+    font-size: 0.85rem;
+    color: var(--bark);
+    font-weight: 400;
+  }
+
+  .post-date {
+    font-size: 0.8rem;
+    color: var(--mist);
+    letter-spacing: 0.05em;
+  }
+
+  .post-read {
+    font-size: 0.8rem;
+    color: var(--clay);
+    font-style: italic;
+    margin-left: auto;
+  }
+
+  /* BODY */
+  .post-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2.5rem 6rem;
+  }
+
+  .post-body p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+
+  .post-body p strong {
+    font-weight: 500;
+    color: var(--bark);
+  }
+
+  .post-body h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--soil);
+    margin: 3rem 0 1.25rem;
+    line-height: 1.2;
+  }
+
+  .post-body h2 em {
+    font-style: italic;
+    color: var(--clay);
+  }
+
+  .post-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin: 2rem 0 0.75rem;
+  }
+
+  .pull-quote {
+    border-left: 2px solid var(--sage);
+    padding: 1.25rem 1.75rem;
+    margin: 2.5rem 0;
+    background: var(--linen);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .callout-box {
+    background: var(--cream);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .callout-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .callout-box ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .callout-box ul li {
+    font-size: 0.95rem;
+    color: var(--soil);
+    padding: 0.4rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .callout-box ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .divider {
+    width: 40px;
+    height: 0.5px;
+    background: var(--mist);
+    margin: 3rem 0;
+  }
+
+  /* AUTHOR BOX */
+  .author-box {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .author-box-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+  }
+
+  .author-box-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--soil);
+    margin-bottom: 0.5rem;
+  }
+
+  .author-box p {
+    font-size: 0.9rem;
+    color: var(--bark);
+    margin-bottom: 1rem;
+  }
+
+  .author-box-cta {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bark);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--clay);
+    padding-bottom: 2px;
+    transition: color 0.15s;
+  }
+
+  .author-box-cta:hover { color: var(--clay); }
+
+  /* NEXT POSTS */
+  .next-posts {
+    border-top: 0.5px solid var(--mist);
+    padding-top: 2.5rem;
+    margin-top: 2rem;
+  }
+
+  .next-posts-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .next-card {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.15s;
+  }
+
+  .next-card:hover { background: var(--cream); }
+
+  .next-card-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+  }
+
+  .next-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .next-card p {
+    font-size: 0.82rem;
+    color: var(--soil);
+    opacity: 0.7;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .coming-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mist);
+    margin-top: 0.75rem;
+    display: block;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--soil);
+    color: var(--mist);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--sage); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .post-hero { padding: 6rem 1.25rem 2.5rem; }
+    .post-body { padding: 0 1.25rem 4rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Seeded in <span>Curiosity</span></a>
+  <a href="index.html#blog" class="nav-back">&#8592; Back to journal</a>
+</nav>
+
+<div class="post-hero">
+  <p class="post-eyebrow"><span></span>Psychology of behavior</p>
+  <h1 class="post-title">The $10 Coffee<br>When You're <em>in Debt</em></h1>
+  <div class="post-meta">
+    <span class="post-author">Jordan Maher</span>
+    <span class="post-date">June 2026</span>
+    <span class="post-read">7 min read</span>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <p>There was a period in my life when I was drowning in credit card debt, barely covering student loans, and spending money the moment it hit my account. Bills first, then whatever was left disappeared faster than I could track it. I was not making much. I knew exactly what I was doing. And I kept doing it anyway.</p>
+
+  <p>The thing I remember most is the coffee. Ten dollars, every single morning. A ritual I held onto with both hands while everything else felt like it was slipping. I knew it was not helping. I did it anyway. And then I felt ashamed about it. And then somehow I spent more.</p>
+
+  <p>If you have ever been in a version of that loop, the spending when you are broke, the eating when you swore you would not, the scrolling when you had real things to do, this is for you. Not because I am going to tell you to stop. But because I want to explain what was actually happening. Because once I understood it, everything changed.</p>
+
+  <div class="pull-quote">
+    <p>"You do not have a discipline problem. You have a nervous system that was never given the right conditions to change."</p>
+  </div>
+
+  <h2>Why logical advice <em>never works</em></h2>
+
+  <p>The first thing everyone says when they find out you are in debt and still spending is some version of just stop. Make a budget. Be more disciplined. And the maddening thing is that you already know all of that. You have made the budget. You have set the intentions. You have had the conversations with yourself at 2am where you swear this week will be different.</p>
+
+  <p>And then it isn't. And you wonder what is wrong with you.</p>
+
+  <p>Here is what I want you to hear clearly: <strong>nothing is wrong with you.</strong> Your brain is doing exactly what brains do under chronic stress. The problem is not your character. It is the conditions your nervous system is operating inside.</p>
+
+  <h2>What is actually happening in your brain</h2>
+
+  <h3>The scarcity trap</h3>
+
+  <p>Researchers Sendhil Mullainathan and Eldar Shafir spent years studying what scarcity does to the human mind. What they found was not what most people expect. When we are in a state of scarcity, financial, emotional, or otherwise, our cognitive bandwidth actually narrows. The brain becomes so consumed by the immediate problem that it loses genuine capacity for long-term thinking. This is not a metaphor. It is a measurable reduction in cognitive function, similar to losing a night of sleep.</p>
+
+  <p>When you are in debt, your brain is not functioning with its full capacity. It is running hot, focused on the immediate threat, unable to zoom out. <strong>The $10 coffee is not irrational in that state. It is the brain seeking the only small thing it can control.</strong> The one good moment in an otherwise overwhelming day.</p>
+
+  <h3>The dopamine loop</h3>
+
+  <p>When the nervous system is chronically activated by financial stress, shame, or anxiety, the brain's reward circuitry compensates. It starts chasing dopamine hits, small bursts of relief that temporarily quiet the alarm bells. Spending, eating, scrolling, gambling. They all trigger a brief dopamine release that makes the stress feel manageable for a few minutes.</p>
+
+  <p>Your brain learns that the behavior provides relief. So it keeps returning to it. Even when the logical mind knows it makes things worse. This is the same neurological pathway as addiction, which is why financial spiraling and addictive patterns look so similar from the outside. They are using the same wiring.</p>
+
+  <h3>The shame spiral</h3>
+
+  <p>This is the piece nobody talks about. After you spend the money you told yourself you wouldn't, shame arrives. And shame is not just an emotion. It activates the same threat response in your nervous system as physical danger. Your body responds to shame the same way it responds to being chased.</p>
+
+  <p>To escape that feeling, the brain seeks relief. Which often leads to another impulsive behavior. Which creates more shame. Which creates more seeking. <strong>The loop does not deepen because you are weak. It deepens because shame is genuinely unbearable and your brain is trying to survive it.</strong></p>
+
+  <div class="callout-box">
+    <h4>The loop in plain language</h4>
+    <ul>
+      <li>Chronic stress narrows your cognitive bandwidth, long-term thinking becomes harder</li>
+      <li>Your nervous system seeks dopamine relief through spending, eating, scrolling</li>
+      <li>The behavior provides temporary relief, the brain learns and repeats it</li>
+      <li>Shame arrives after, activating a threat response that feels unbearable</li>
+      <li>The brain seeks relief from shame, often through the same behavior</li>
+      <li>The hole gets deeper, not because of weakness, but because of wiring</li>
+    </ul>
+  </div>
+
+  <h2>The what-the-hell <em>effect</em></h2>
+
+  <p>Psychologists studying dieting discovered something they eventually called the what-the-hell effect. Once someone breaks a rule, eats something off plan, spends money they should not have, misses a workout, the brain shifts into a specific mode. It says I have already failed. I might as well go all the way.</p>
+
+  <p>This is why one bad financial day can turn into a month of spending. Why eating one cookie can turn into eating the whole bag. It is not about the cookie or the purchase. It is about what the brain does the moment it registers failure. Most people interpret this as proof they have no self-control. What it actually is is a completely predictable cognitive pattern that happens to almost everyone under the right conditions.</p>
+
+  <p>Knowing it has a name changes something. You are not uniquely broken. You are human.</p>
+
+  <h2>Why the hole gets deeper when there seems to be <em>no way out</em></h2>
+
+  <p>There is one more piece I want to name because it is the one that explained my experience the most precisely. It is called temporal discounting, the brain's tendency to value immediate rewards far more than future ones. Under normal conditions, most people can balance present pleasure against future consequences reasonably well. Under chronic stress, that balance tips dramatically toward the present.</p>
+
+  <p>When the future feels hopeless or unachievable, the brain discounts it almost entirely. If there is no realistic path to being out of debt, why would your brain factor debt into its decision-making? It won't. It will focus entirely on now. On the coffee. On the thing that makes this moment feel okay. <strong>The deeper the hole feels, the more your brain prioritizes the present. This is not a flaw. It is survival logic operating in the wrong context.</strong></p>
+
+  <div class="pull-quote">
+    <p>"The coffee was never about the coffee. It was the only good thing happening in the next ten minutes."</p>
+  </div>
+
+  <h2>What actually helps</h2>
+
+  <p>I want to be honest here. I am not going to give you a budgeting tip. Not because budgets are useless. They are not. But they are step three in a sequence that most people try to start at step one.</p>
+
+  <p>The sequence that actually works is this: nervous system safety first, pattern awareness second, behavior change third.</p>
+
+  <p>You cannot build lasting behavioral change on a dysregulated nervous system. The brain that is in scarcity mode, running on cortisol, cycling through shame, that brain cannot sustain new habits no matter how much it wants to. The first work is always creating enough safety in the body and mind that the prefrontal cortex can come back online. Sleep. Hydration. Movement that feels good rather than punishing. Reducing the shame load. These are not soft optional extras. They are the biological prerequisites for change.</p>
+
+  <p>Pattern awareness comes second. Not judgment of the pattern, curiosity about it. When does it happen? What is the feeling immediately before? What is the body doing? What does the loop give you, even temporarily? Understanding a pattern with compassion is not the same as excusing it. It is what makes it possible to actually interrupt it.</p>
+
+  <p>Then, and only then, does behavioral change have a real chance of sticking.</p>
+
+  <div class="callout-box">
+    <h4>The three things worth trying right now</h4>
+    <ul>
+      <li>Name the loop without judgment the next time it happens. "My brain is seeking relief" is more useful than "I have no willpower."</li>
+      <li>Ask what the behavior is giving you, not what it is costing you. The answer reveals what your nervous system actually needs.</li>
+      <li>Address the shame directly. Talk to someone. Write it down. The loop cannot survive being named out loud.</li>
+    </ul>
+  </div>
+
+  <h2>Why I am writing about this</h2>
+
+  <p>I spent years thinking the coffee was a character flaw. That the loop I was in said something unfixable about me. It took understanding the neuroscience to realize it said something very fixable about my conditions.</p>
+
+  <p>I work with women now who are doing the same thing I did. Spending when they are broke. Eating when they swore they wouldn't. Reaching for their phone the moment discomfort arrives. And the first thing I want every single one of them to understand is that the loop is not who they are. It is what happens when a nervous system never learned that safety was available.</p>
+
+  <p>That is what we work on. Not discipline. Not willpower. Not another habit tracker. <strong>We work on creating the conditions where change actually becomes possible.</strong></p>
+
+  <p>The $10 coffee makes complete sense when you understand what it was really for. And once you understand that, really understand it in your body and not just your head, you do not need the coffee the same way anymore.</p>
+
+  <div class="divider"></div>
+
+  <div class="author-box">
+    <p class="author-box-label">About the author</p>
+    <p class="author-box-name">Jordan Maher</p>
+    <p>Jordan is the founder of Seeded in Curiosity, a holistic wellness coaching practice for women. She works at the intersection of behavioral health, nervous system regulation, and whole-person wellness, and she has lived most of what she writes about.</p>
+    <a href="intake.html" class="author-box-cta">Work with Jordan</a>
+  </div>
+
+  <div class="next-posts">
+    <p class="next-posts-label">Continue reading</p>
+    <div class="next-grid">
+      <div class="next-card">
+        <p class="next-card-eyebrow">Hormones and energy</p>
+        <h3>Why You Feel Like a Different Person Every Two Weeks</h3>
+        <p>Your cycle is not making you dramatic. It is shifting your brain chemistry in measurable ways.</p>
+        <span class="coming-label">Coming soon</span>
+      </div>
+      <div class="next-card">
+        <p class="next-card-eyebrow">Nervous system</p>
+        <h3>You Don't Have a Discipline Problem</h3>
+        <p>You have a nervous system that was never given the right conditions to change.</p>
+        <span class="coming-label">Coming soon</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <span>Seeded in Curiosity</span> &nbsp;·&nbsp; Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
+</footer>
+
+</body>
+</html>
