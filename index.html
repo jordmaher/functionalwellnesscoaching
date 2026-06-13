@@ -256,7 +256,7 @@
 
   .body-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--mist);
     border: 0.5px solid var(--mist);
@@ -417,7 +417,7 @@
 
   .body-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 1px;
     background: var(--mist);
     border: 0.5px solid var(--mist);
@@ -788,6 +788,7 @@
     .story-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
     .about-left { position: static; }
+    .body-grid { grid-template-columns: 1fr; }
   }
 
   @media (prefers-reduced-motion: reduce) {
