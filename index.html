@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seeded in Curiosity | Jordan Maher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7A9E7E;
+    --clay: #A0855B;
+    --bark: #6B4E3D;
+    --cream: #F5F0E8;
+    --linen: #EDE8DE;
+    --soil: #2C2018;
+    --mist: #D4C9B8;
+    --white: #FDFAF6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--soil);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--mist);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--soil);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--sage); }
+
+  .nav-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bark);
+    text-decoration: none;
+    font-weight: 400;
+    padding: 0.6rem 1.4rem;
+    border: 0.5px solid var(--clay);
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .nav-link:hover { background: var(--clay); color: var(--white); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 8rem 2.5rem 4rem;
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 55%;
+    height: 120%;
+    background: var(--linen);
+    border-radius: 0 0 0 60%;
+    z-index: 0;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 620px;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .hero-title em { font-style: italic; color: var(--clay); }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 480px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .hero-cta {
+    display: inline-block;
+    background: var(--bark);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .hero-cta:hover { background: var(--soil); }
+
+  .hero-seed {
+    position: absolute;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .seed-circle {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    border: 0.5px solid var(--mist);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .seed-inner {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: var(--linen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+  }
+
+  .seed-word {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--clay);
+    line-height: 2.4;
+    letter-spacing: 0.02em;
+  }
+
+  /* SECTIONS */
+  section { padding: 6rem 2.5rem; }
+
+  .container { max-width: 960px; margin: 0 auto; }
+
+  .section-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em { font-style: italic; color: var(--clay); }
+
+  /* FOR YOU */
+  .for-you { background: var(--linen); }
+
+  .pain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .pain-card {
+    background: var(--white);
+    border: 0.5px solid var(--mist);
+    padding: 1.75rem;
+    border-radius: 2px;
+  }
+
+  .pain-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .pain-card p {
+    font-size: 0.9rem;
+    color: var(--soil);
+    opacity: 0.8;
+    line-height: 1.7;
+  }
+
+  /* BODY SECTION */
+  .body-section { background: var(--white); }
+
+  .body-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 620px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--mist);
+    border: 0.5px solid var(--mist);
+    margin-bottom: 2.5rem;
+  }
+
+  .body-tile {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    text-align: center;
+  }
+
+  .body-tile-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .body-tile h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.5rem;
+  }
+
+  .body-tile p {
+    font-size: 0.83rem;
+    color: var(--soil);
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+
+  .body-callout {
+    background: var(--linen);
+    border-left: 2px solid var(--sage);
+    padding: 1.75rem 2rem;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .body-callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--bark);
+    line-height: 1.6;
+  }
+
+  /* WHOLE PICTURE */
+  .whole-picture { background: var(--cream); }
+
+  .wp-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .wp-item {
+    background: var(--white);
+    border: 0.5px solid var(--mist);
+    padding: 1.75rem;
+    border-radius: 2px;
+  }
+
+  .wp-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .wp-item p {
+    font-size: 0.88rem;
+    color: var(--soil);
+    opacity: 0.8;
+    line-height: 1.75;
+  }
+
+  .wp-note {
+    background: var(--linen);
+    border-left: 2px solid var(--clay);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 2px 2px 0;
+    font-size: 0.85rem;
+    color: var(--bark);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* STORY */
+  .story { background: var(--cream); }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .story-text p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .story-text p strong { font-weight: 500; color: var(--bark); }
+
+  .story-quote {
+    background: var(--white);
+    padding: 2.5rem;
+    border-left: 2px solid var(--sage);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .story-quote blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.5;
+    margin-bottom: 1rem;
+  }
+
+  .story-quote cite {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-style: normal;
+  }
+
+  /* BODY SECTION */
+  .body-section { background: var(--white); }
+
+  .body-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 620px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .body-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1px;
+    background: var(--mist);
+    border: 0.5px solid var(--mist);
+    margin-bottom: 2.5rem;
+  }
+
+  .body-tile {
+    background: var(--white);
+    padding: 2rem 1.75rem;
+    text-align: center;
+  }
+
+  .body-tile-icon {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-style: italic;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .body-tile h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.5rem;
+  }
+
+  .body-tile p {
+    font-size: 0.83rem;
+    color: var(--soil);
+    opacity: 0.75;
+    line-height: 1.6;
+  }
+
+  .body-callout {
+    background: var(--linen);
+    border-left: 2px solid var(--sage);
+    padding: 1.75rem 2rem;
+    border-radius: 0 2px 2px 0;
+  }
+
+  .body-callout p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--bark);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* WHOLE PICTURE */
+  .whole-picture { background: var(--cream); }
+
+  .wp-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .wp-item {
+    background: var(--white);
+    border: 0.5px solid var(--mist);
+    padding: 1.75rem;
+    border-radius: 2px;
+  }
+
+  .wp-item h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .wp-item p {
+    font-size: 0.88rem;
+    color: var(--soil);
+    opacity: 0.8;
+    line-height: 1.75;
+  }
+
+  .wp-note {
+    background: var(--linen);
+    border-left: 2px solid var(--clay);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0 2px 2px 0;
+    font-size: 0.85rem;
+    color: var(--bark);
+    line-height: 1.7;
+    font-style: italic;
+  }
+
+  /* METHOD */
+  .method { background: var(--soil); color: var(--cream); }
+  .method .section-title { color: var(--cream); }
+  .method .section-eyebrow { color: var(--sage); }
+
+  .method-intro {
+    font-size: 1.05rem;
+    color: var(--mist);
+    max-width: 580px;
+    margin-bottom: 3.5rem;
+    line-height: 1.8;
+  }
+
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.1);
+    border: 0.5px solid rgba(255,255,255,0.1);
+  }
+
+  .phase {
+    background: var(--soil);
+    padding: 2.5rem;
+    transition: background 0.2s;
+  }
+
+  .phase:hover { background: #3a2d20; }
+
+  .phase-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--sage);
+    opacity: 0.5;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+
+  .phase-weeks {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+
+  .phase p { font-size: 0.88rem; color: var(--mist); line-height: 1.7; }
+
+  .method-note {
+    margin-top: 2.5rem;
+    padding: 1.5rem 2rem;
+    background: rgba(122, 158, 126, 0.1);
+    border-left: 2px solid var(--sage);
+    font-size: 0.9rem;
+    color: var(--mist);
+    line-height: 1.7;
+  }
+
+  .method-note strong { color: var(--sage); font-weight: 400; }
+
+  /* ABOUT */
+  .about { background: var(--white); }
+
+  .about-layout {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .about-left { position: sticky; top: 6rem; }
+
+  .about-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--soil);
+    margin-bottom: 0.25rem;
+  }
+
+  .about-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+
+  .about-credentials { list-style: none; padding: 0; }
+
+  .about-credentials li {
+    font-size: 0.85rem;
+    color: var(--bark);
+    padding: 0.5rem 0;
+    border-bottom: 0.5px solid var(--mist);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .about-credentials li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--sage);
+    flex-shrink: 0;
+  }
+
+  .about-right p {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.25rem;
+    font-weight: 300;
+  }
+
+  .about-right p strong { font-weight: 500; color: var(--bark); }
+
+  /* BLOG */
+  .blog-section { background: var(--white); }
+
+  .blog-intro {
+    font-size: 1.05rem;
+    color: var(--bark);
+    max-width: 560px;
+    margin-bottom: 3rem;
+    line-height: 1.8;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .blog-card {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 2rem;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  a.blog-card:hover {
+    background: var(--cream);
+    border-color: var(--clay);
+  }
+
+  .blog-card-coming {
+    opacity: 0.65;
+  }
+
+  .blog-card-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+  }
+
+  .blog-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--soil);
+    line-height: 1.3;
+    margin: 0;
+  }
+
+  .blog-card-excerpt {
+    font-size: 0.88rem;
+    color: var(--bark);
+    line-height: 1.75;
+    flex: 1;
+    margin: 0;
+  }
+
+  .blog-card-cta {
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--clay);
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  .blog-card-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mist);
+    font-weight: 400;
+    margin-top: 0.5rem;
+  }
+
+  /* BOOKING */
+  .booking { background: var(--linen); text-align: center; }
+  .booking .container { max-width: 640px; }
+  .booking .section-title { margin-bottom: 1rem; }
+
+  .booking-sub {
+    font-size: 1rem;
+    color: var(--bark);
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
+  }
+
+  .booking-cta {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 1.25rem;
+    background: var(--bark);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 1.1rem 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .booking-cta:hover { background: var(--soil); }
+
+  .booking-note {
+    font-size: 0.8rem;
+    color: var(--clay);
+    letter-spacing: 0.05em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--soil);
+    color: var(--mist);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--sage); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.25rem; }
+    .hero { padding: 7rem 1.25rem 3rem; }
+    .hero::before { display: none; }
+    .hero-seed { display: none; }
+    section { padding: 4rem 1.25rem; }
+    .story-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+    .about-left { position: static; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Seeded in <span>Curiosity</span></a>
+  <a href="#booking" class="nav-link">Work with me</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Holistic wellness coaching for women</p>
+    <h1 class="hero-title">Your body has been<br>trying to tell you<br><em>something.</em></h1>
+    <p class="hero-sub">You are not broken. You are not lazy. You are a woman with a beautifully complex body that nobody ever taught you how to understand. That changes here.</p>
+    <a href="#booking" class="hero-cta">Start the conversation</a>
+  </div>
+  <div class="hero-seed">
+    <div class="seed-circle">
+      <div class="seed-inner">
+        <p class="seed-word">hormones</p>
+        <p class="seed-word">rest</p>
+        <p class="seed-word">nourishment</p>
+        <p class="seed-word">becoming</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOR YOU -->
+<section class="for-you" id="for-you">
+  <div class="container">
+    <p class="section-eyebrow">You might be here because</p>
+    <h2 class="section-title">You know something is off.<br>You just <em>can't name it yet.</em></h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <h3>The burnout that won't budge</h3>
+        <p>You've rested. You've taken the vacation. You come back and within a week you're running on empty again. This isn't a willpower problem. It's a root cause problem.</p>
+      </div>
+      <div class="pain-card">
+        <h3>The perfectionism spiral</h3>
+        <p>Your standards are crushing you and you can't seem to lower them. Everything has to be right. The pressure never fully lifts. Your nervous system is paying the price.</p>
+      </div>
+      <div class="pain-card">
+        <h3>The impulsive patterns you can't explain</h3>
+        <p>Spending, eating, scrolling, saying yes when you mean no. You know the pattern. You've tried to stop it. But nobody has ever helped you find where it starts.</p>
+      </div>
+      <div class="pain-card">
+        <h3>A body you don't fully understand</h3>
+        <p>Sleep is inconsistent. Energy is unpredictable. Your cycle feels like a mystery. You were never taught how your hormones shape your mood, focus, hunger, and drive. You deserved that education.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR BODY -->
+<section class="body-section" id="body">
+  <div class="container">
+    <p class="section-eyebrow">The foundation</p>
+    <h2 class="section-title">How well do you know your<br><em>beautifully complex body?</em></h2>
+    <p class="body-intro">Most wellness programs skip the basics. We start there. Because no amount of mindset work sticks when your body is running on 5 hours of sleep, dehydration, and cortisol. We build the physical foundation first, then everything else becomes possible.</p>
+
+    <div class="body-grid">
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Sleep</h3>
+        <p>How many hours are you actually getting? What happens to your hormones, your cravings, and your emotional regulation when you don't get enough?</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Hydration</h3>
+        <p>Most women are chronically dehydrated and have no idea. Fatigue, brain fog, and anxiety are often the first signs. Water is not a wellness trend. It is biology.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Movement</h3>
+        <p>Not punishment. Not performance. Movement that actually matches where you are in your cycle and what your nervous system needs right now.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Your cycle</h3>
+        <p>Your hormones shift across four distinct phases every month. Your energy, focus, mood, and appetite shift with them. Learning to work with your cycle changes everything.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Nourishment</h3>
+        <p>Not a diet. Not a protocol. Understanding how food affects your hormones, your nervous system, and your relationship with your own body.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Nervous system</h3>
+        <p>Burnout, perfectionism, and impulsive patterns all live here. When your nervous system is dysregulated, no habit will stick. We address this at the root.</p>
+      </div>
+    </div>
+
+    <div class="body-callout">
+      <p>Your body is not your enemy. It is the most intelligent system you will ever live inside. You just were never given the instruction manual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHOLE PICTURE -->
+<section class="whole-picture" id="whole-picture">
+  <div class="container">
+    <p class="section-eyebrow">What makes this different</p>
+    <h2 class="section-title">We look at things most<br>coaches <em>never ask about.</em></h2>
+    <p class="wp-intro">Real root cause work means seeing the full picture. That includes the things that often get left out of wellness conversations entirely.</p>
+    <div class="wp-grid">
+      <div class="wp-item">
+        <h3>What is actually in your system</h3>
+        <p>Medications, supplements, caffeine, nicotine, alcohol. Everything affects your hormones, your nervous system, your sleep, and your mood. We look at the full chemical landscape, not just the wellness-approved parts.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The conversations your doctor hasn't had with you</h3>
+        <p>SSRIs and stimulants can affect your energy, libido, sleep architecture, and emotional range in ways nobody explains. We educate, we explore, and we help you bring better questions to your care team.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The patterns that feel shameful</h3>
+        <p>Impulsive spending. Emotional eating. Reaching for your phone the moment things get uncomfortable. These are not character flaws. They are nervous system responses. We find the root.</p>
+      </div>
+      <div class="wp-item">
+        <h3>Your body's actual baseline</h3>
+        <p>Before we add anything, we look at what you are already working with. Sleep debt, hydration, cycle patterns, movement habits. The foundation has to be honest before it can be strong.</p>
+      </div>
+    </div>
+    <div class="wp-note">
+      A note on scope: I am a wellness coach in training, not a doctor or therapist. I will never advise you to change or stop a medication. What I will do is help you understand your body well enough to ask better questions of the people who can.
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="container">
+    <div class="story-layout">
+      <div class="story-text">
+        <p class="section-eyebrow">Why this work</p>
+        <h2 class="section-title">I grew up where<br><em>access didn't exist.</em></h2>
+        <p>I grew up in a town of 700 people where mental health care simply wasn't available. That shaped everything about why access to real, grounded support matters so deeply to me.</p>
+        <p>For over two years I have worked in behavioral health, building clinical relationships that connect people to care. I have sat with hundreds of providers and families. And I kept seeing the same gap: people getting connected to clinical support while the deeper, whole-body pieces went completely untreated.</p>
+        <p>The relationship with your body. Your cycle. Your nervous system. Your patterns around food, rest, spending, and perfectionism. <strong>Nobody was addressing the root.</strong></p>
+        <p>I am currently training in motivational interviewing, a framework built on the belief that <strong>you already carry the answers inside you.</strong> My job is to ask the right questions until you find them.</p>
+      </div>
+      <div>
+        <div class="story-quote">
+          <blockquote>"Real transformation happens when someone finally feels seen, not just treated."</blockquote>
+          <cite>Jordan Maher, founder</cite>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODY SECTION -->
+<section class="body-section" id="body">
+  <div class="container">
+    <p class="section-eyebrow">The foundation</p>
+    <h2 class="section-title">How well do you know your<br><em>beautifully complex body?</em></h2>
+    <p class="body-intro">Most wellness programs skip the basics. We start there. Because no amount of mindset work sticks when your body is running on 5 hours of sleep, dehydration, and cortisol. We build the physical foundation first, then everything else becomes possible.</p>
+    <div class="body-grid">
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Sleep</h3>
+        <p>How many hours are you actually getting? What happens to your hormones, your cravings, and your emotional regulation when you don't get enough?</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Hydration</h3>
+        <p>Most women are chronically dehydrated and have no idea. Fatigue, brain fog, and anxiety are often the first signs. Water is not a wellness trend. It is biology.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Movement</h3>
+        <p>Not punishment. Not performance. Movement that actually matches where you are in your cycle and what your nervous system needs right now.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Your cycle</h3>
+        <p>Your hormones shift across four distinct phases every month. Your energy, focus, mood, and appetite shift with them. Learning to work with your cycle changes everything.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Nourishment</h3>
+        <p>Not a diet. Not a protocol. Understanding how food affects your hormones, your nervous system, and your relationship with your own body.</p>
+      </div>
+      <div class="body-tile">
+        <div class="body-tile-icon">~</div>
+        <h3>Nervous system</h3>
+        <p>Burnout, perfectionism, and impulsive patterns all live here. When your nervous system is dysregulated, no habit will stick. We address this at the root.</p>
+      </div>
+    </div>
+    <div class="body-callout">
+      <p>Your body is not your enemy. It is the most intelligent system you will ever live inside. You just were never given the instruction manual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHOLE PICTURE -->
+<section class="whole-picture" id="whole-picture">
+  <div class="container">
+    <p class="section-eyebrow">What makes this different</p>
+    <h2 class="section-title">We look at things most<br>coaches <em>never ask about.</em></h2>
+    <p class="wp-intro">Real root cause work means seeing the full picture. That includes the things that often get left out of wellness conversations entirely.</p>
+    <div class="wp-grid">
+      <div class="wp-item">
+        <h3>What is actually in your system</h3>
+        <p>Medications, supplements, caffeine, nicotine, alcohol. Everything affects your hormones, your nervous system, your sleep, and your mood. We look at the full chemical landscape, not just the wellness-approved parts.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The conversations your doctor hasn't had with you</h3>
+        <p>SSRIs and stimulants can affect your energy, libido, sleep architecture, and emotional range in ways nobody explains. We educate, we explore, and we help you bring better questions to your care team.</p>
+      </div>
+      <div class="wp-item">
+        <h3>The patterns that feel shameful</h3>
+        <p>Impulsive spending. Emotional eating. Reaching for your phone the moment things get uncomfortable. These are not character flaws. They are nervous system responses. We find the root.</p>
+      </div>
+      <div class="wp-item">
+        <h3>Your body's actual baseline</h3>
+        <p>Before we add anything, we look at what you are already working with. Sleep debt, hydration, cycle patterns, movement habits. The foundation has to be honest before it can be strong.</p>
+      </div>
+    </div>
+    <div class="wp-note">
+      A note on scope: I am a wellness coach in training, not a doctor or therapist. I will never advise you to change or stop a medication. What I will do is help you understand your body well enough to ask better questions of the people who can.
+    </div>
+  </div>
+</section>
+
+<!-- METHOD -->
+<section class="method" id="method">
+  <div class="container">
+    <p class="section-eyebrow">The work</p>
+    <h2 class="section-title">A rooted process.<br>Tools you keep forever.</h2>
+    <p class="method-intro">This is not a program where you check boxes and hope something sticks. We go to the root, build a real solution together, and you leave with something that belongs to you. Not a dependency on me.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-num">01</div>
+        <p class="phase-weeks">Weeks 1 to 3</p>
+        <h3>The Root Audit</h3>
+        <p>We get honest about what is actually driving your patterns. Sleep, hydration, movement, cycle awareness, nervous system load. We map the physical foundation before anything else. No guessing. No generic advice.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-num">02</div>
+        <p class="phase-weeks">Weeks 4 to 8</p>
+        <h3>Building the Blueprint</h3>
+        <p>We design a real, specific solution for your life. Cycle-aligned routines. Nervous system support. Patterns around perfectionism, impulsivity, and spending examined with curiosity instead of shame. A plan built for your actual biology.</p>
+      </div>
+      <div class="phase">
+        <div class="phase-num">03</div>
+        <p class="phase-weeks">Weeks 9 to 12</p>
+        <h3>Rooted in Action</h3>
+        <p>You practice using the tools. We refine together. You build real confidence in your ability to navigate your own body and life. When the next season comes, you know how to move through it.</p>
+      </div>
+    </div>
+    <p class="method-note"><strong>How this works:</strong> When you complete the program, you leave with tools that are yours. You do not need me to function. But life brings new seasons and when the next one arrives, I am here. You come back when you are ready, not because you are stuck.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-layout">
+      <div class="about-left">
+        <h2 class="about-name">Jordan Maher</h2>
+        <p class="about-title">Founder, Seeded in Curiosity</p>
+        <ul class="about-credentials">
+          <li>Clinical Partnerships, Behavioral Health</li>
+          <li>Motivational Interviewing, Psychwire (in progress)</li>
+          <li>BS Marketing, Illinois State University</li>
+          <li>Mental Health Access Advocate</li>
+          <li>Holistic Wellness and Women's Empowerment</li>
+        </ul>
+      </div>
+      <div class="about-right">
+        <p>I came into behavioral health because I believe access to care is a human right. Growing up in a small town with none of it taught me that early. It also taught me what it feels like to figure things out without a roadmap.</p>
+        <p>I have spent the last two years in the clinical world building real relationships across the behavioral health ecosystem. Along the way, the whole-person wellness space kept pulling me closer. I am not a believer in coincidences.</p>
+        <p>My approach is grounded in motivational interviewing, a framework that believes you are the expert on your own life. I am not here to hand you a plan. <strong>I am here to ask better questions until you find what is already true for you.</strong></p>
+        <p>I am building this for the woman who is capable, curious, and still somehow stuck. The one who has tried all the surface-level fixes. The one who suspects the answer lives somewhere deeper. <strong>You are in the right place.</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog-section" id="blog">
+  <div class="container">
+    <p class="section-eyebrow">From the journal</p>
+    <h2 class="section-title">Honest writing about<br><em>the patterns nobody names.</em></h2>
+    <p class="blog-intro">No wellness platitudes. No generic advice. Just real conversations about why we do what we do, and what actually helps.</p>
+    <div class="blog-grid">
+      <a href="blog-spending-loop.html" class="blog-card">
+        <div class="blog-card-eyebrow">Psychology of behavior</div>
+        <h3 class="blog-card-title">The $10 Coffee When You're in Debt</h3>
+        <p class="blog-card-excerpt">You know it doesn't make sense. You do it anyway. Here is the psychology behind why you dig the hole deeper when you feel most stuck, and what is actually happening in your nervous system.</p>
+        <span class="blog-card-cta">Read more</span>
+      </a>
+      <div class="blog-card blog-card-coming">
+        <div class="blog-card-eyebrow">Hormones and energy</div>
+        <h3 class="blog-card-title">Why You Feel Like a Different Person Every Two Weeks</h3>
+        <p class="blog-card-excerpt">Your cycle is not making you dramatic. It is shifting your brain chemistry, your energy, and your emotional capacity in measurable ways. Here is what nobody taught you.</p>
+        <span class="blog-card-label">Coming soon</span>
+      </div>
+      <div class="blog-card blog-card-coming">
+        <div class="blog-card-eyebrow">Nervous system</div>
+        <h3 class="blog-card-title">You Don't Have a Discipline Problem</h3>
+        <p class="blog-card-excerpt">You have a nervous system that was never given the right conditions to change. The difference between those two sentences will change how you see every habit you have ever tried to build.</p>
+        <span class="blog-card-label">Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="booking" id="booking">
+  <div class="container">
+    <p class="section-eyebrow">Ready to begin</p>
+    <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
+    <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
+    <a href="intake.html" class="booking-cta">Fill out your intake form</a>
+    <p class="booking-note">Or book a discovery call first: <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" style="color: var(--clay); text-decoration: underline; font-style: italic;">schedule a free 20-minute chat</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Seeded in Curiosity</span> &nbsp;·&nbsp; Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
+</footer>
+
+</body>
+</html>
