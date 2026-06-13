@@ -56,6 +56,23 @@
 
   .nav-logo span { color: var(--sage); }
 
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .nav-text-link {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.15s;
+  }
+
+  .nav-text-link:hover { color: var(--soil); }
+
   .nav-link {
     font-size: 0.8rem;
     letter-spacing: 0.1em;
@@ -404,123 +421,6 @@
     font-style: normal;
   }
 
-  /* BODY SECTION */
-  .body-section { background: var(--white); }
-
-  .body-intro {
-    font-size: 1.05rem;
-    color: var(--bark);
-    max-width: 620px;
-    margin-bottom: 3rem;
-    line-height: 1.8;
-  }
-
-  .body-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--mist);
-    border: 0.5px solid var(--mist);
-    margin-bottom: 2.5rem;
-  }
-
-  .body-tile {
-    background: var(--white);
-    padding: 2rem 1.75rem;
-    text-align: center;
-  }
-
-  .body-tile-icon {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-style: italic;
-    color: var(--sage);
-    margin-bottom: 0.75rem;
-    line-height: 1;
-  }
-
-  .body-tile h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--bark);
-    margin-bottom: 0.5rem;
-  }
-
-  .body-tile p {
-    font-size: 0.83rem;
-    color: var(--soil);
-    opacity: 0.75;
-    line-height: 1.6;
-  }
-
-  .body-callout {
-    background: var(--linen);
-    border-left: 2px solid var(--sage);
-    padding: 1.75rem 2rem;
-    border-radius: 0 2px 2px 0;
-  }
-
-  .body-callout p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--bark);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  /* WHOLE PICTURE */
-  .whole-picture { background: var(--cream); }
-
-  .wp-intro {
-    font-size: 1.05rem;
-    color: var(--bark);
-    max-width: 580px;
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
-
-  .wp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .wp-item {
-    background: var(--white);
-    border: 0.5px solid var(--mist);
-    padding: 1.75rem;
-    border-radius: 2px;
-  }
-
-  .wp-item h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: var(--bark);
-    margin-bottom: 0.75rem;
-  }
-
-  .wp-item p {
-    font-size: 0.88rem;
-    color: var(--soil);
-    opacity: 0.8;
-    line-height: 1.75;
-  }
-
-  .wp-note {
-    background: var(--linen);
-    border-left: 2px solid var(--clay);
-    padding: 1.25rem 1.5rem;
-    border-radius: 0 2px 2px 0;
-    font-size: 0.85rem;
-    color: var(--bark);
-    line-height: 1.7;
-    font-style: italic;
-  }
-
   /* METHOD */
   .method { background: var(--soil); color: var(--cream); }
   .method .section-title { color: var(--cream); }
@@ -799,8 +699,13 @@
 <body>
 
 <nav>
-  <a href="#" class="nav-logo">Seeded in <span>Curiosity</span></a>
-  <a href="#booking" class="nav-link">Work with me</a>
+  <a href="index.html" class="nav-logo">Seeded in <span>Curiosity</span></a>
+  <div class="nav-links">
+    <a href="index.html" class="nav-text-link">Home</a>
+    <a href="about.html" class="nav-text-link">About</a>
+    <a href="blog.html" class="nav-text-link">Journal</a>
+    <a href="intake.html" class="nav-link">Work with me</a>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -943,80 +848,6 @@
           <cite>Jordan Maher, founder</cite>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- BODY SECTION -->
-<section class="body-section" id="body">
-  <div class="container">
-    <p class="section-eyebrow">The foundation</p>
-    <h2 class="section-title">How well do you know your<br><em>beautifully complex body?</em></h2>
-    <p class="body-intro">Most wellness programs skip the basics. We start there. Because no amount of mindset work sticks when your body is running on 5 hours of sleep, dehydration, and cortisol. We build the physical foundation first, then everything else becomes possible.</p>
-    <div class="body-grid">
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Sleep</h3>
-        <p>How many hours are you actually getting? What happens to your hormones, your cravings, and your emotional regulation when you don't get enough?</p>
-      </div>
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Hydration</h3>
-        <p>Most women are chronically dehydrated and have no idea. Fatigue, brain fog, and anxiety are often the first signs. Water is not a wellness trend. It is biology.</p>
-      </div>
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Movement</h3>
-        <p>Not punishment. Not performance. Movement that actually matches where you are in your cycle and what your nervous system needs right now.</p>
-      </div>
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Your cycle</h3>
-        <p>Your hormones shift across four distinct phases every month. Your energy, focus, mood, and appetite shift with them. Learning to work with your cycle changes everything.</p>
-      </div>
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Nourishment</h3>
-        <p>Not a diet. Not a protocol. Understanding how food affects your hormones, your nervous system, and your relationship with your own body.</p>
-      </div>
-      <div class="body-tile">
-        <div class="body-tile-icon">~</div>
-        <h3>Nervous system</h3>
-        <p>Burnout, perfectionism, and impulsive patterns all live here. When your nervous system is dysregulated, no habit will stick. We address this at the root.</p>
-      </div>
-    </div>
-    <div class="body-callout">
-      <p>Your body is not your enemy. It is the most intelligent system you will ever live inside. You just were never given the instruction manual.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHOLE PICTURE -->
-<section class="whole-picture" id="whole-picture">
-  <div class="container">
-    <p class="section-eyebrow">What makes this different</p>
-    <h2 class="section-title">We look at things most<br>coaches <em>never ask about.</em></h2>
-    <p class="wp-intro">Real root cause work means seeing the full picture. That includes the things that often get left out of wellness conversations entirely.</p>
-    <div class="wp-grid">
-      <div class="wp-item">
-        <h3>What is actually in your system</h3>
-        <p>Medications, supplements, caffeine, nicotine, alcohol. Everything affects your hormones, your nervous system, your sleep, and your mood. We look at the full chemical landscape, not just the wellness-approved parts.</p>
-      </div>
-      <div class="wp-item">
-        <h3>The conversations your doctor hasn't had with you</h3>
-        <p>SSRIs and stimulants can affect your energy, libido, sleep architecture, and emotional range in ways nobody explains. We educate, we explore, and we help you bring better questions to your care team.</p>
-      </div>
-      <div class="wp-item">
-        <h3>The patterns that feel shameful</h3>
-        <p>Impulsive spending. Emotional eating. Reaching for your phone the moment things get uncomfortable. These are not character flaws. They are nervous system responses. We find the root.</p>
-      </div>
-      <div class="wp-item">
-        <h3>Your body's actual baseline</h3>
-        <p>Before we add anything, we look at what you are already working with. Sleep debt, hydration, cycle patterns, movement habits. The foundation has to be honest before it can be strong.</p>
-      </div>
-    </div>
-    <div class="wp-note">
-      A note on scope: I am a wellness coach in training, not a doctor or therapist. I will never advise you to change or stop a medication. What I will do is help you understand your body well enough to ask better questions of the people who can.
     </div>
   </div>
 </section>
