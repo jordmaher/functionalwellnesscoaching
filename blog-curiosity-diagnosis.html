@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="I spent years being told my symptoms were normal. They weren't. Here is what happened when I stopped accepting that answer and got curious instead." />
+  <title>Curiosity as a Diagnosis | Seeded in Curiosity</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream: #f5f2ec;
+      --warm-white: #faf8f4;
+      --text-dark: #2c2a25;
+      --text-mid: #5a5650;
+      --text-light: #8a8680;
+      --accent-green: #7a9e87;
+      --accent-green-light: #a8c4b0;
+      --border: #e0dbd2;
+      --serif: 'Georgia', 'Times New Roman', serif;
+      --sans: 'Helvetica Neue', Arial, sans-serif;
+    }
+
+    body {
+      background: var(--warm-white);
+      color: var(--text-dark);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.75;
+    }
+
+    /* NAV */
+    nav {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--sans);
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-mid);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text-dark); }
+
+    .nav-back {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-back:hover { color: var(--text-dark); }
+
+    /* HERO */
+    .hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 2.5rem;
+    }
+
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: normal;
+      line-height: 1.2;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--text-mid);
+    }
+
+    .meta {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      color: var(--text-light);
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+    }
+
+    /* ARTICLE BODY */
+    .article {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2.5rem 2rem 5rem;
+    }
+
+    .article p {
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+
+    .article h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: normal;
+      line-height: 1.25;
+      color: var(--text-dark);
+      margin: 3rem 0 1.25rem;
+    }
+
+    .article h2 em {
+      font-style: italic;
+      color: var(--text-mid);
+    }
+
+    .article h3 {
+      font-family: var(--sans);
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin: 2.5rem 0 0.75rem;
+    }
+
+    .article strong {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    /* PULLQUOTE */
+    .pullquote {
+      border-left: 3px solid var(--accent-green);
+      margin: 2.5rem 0;
+      padding: 1.25rem 0 1.25rem 1.75rem;
+    }
+
+    .pullquote p {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      line-height: 1.55;
+      color: var(--text-mid);
+      margin-bottom: 0;
+    }
+
+    /* DATA CALLOUT */
+    .data-callout {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 2rem 2rem 1.5rem;
+      margin: 2.5rem 0;
+    }
+
+    .data-callout h3 {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .data-item {
+      border-top: 2px solid var(--accent-green);
+      padding-top: 0.85rem;
+    }
+
+    .data-item .number {
+      font-family: var(--serif);
+      font-size: 2rem;
+      line-height: 1;
+      color: var(--text-dark);
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .data-item .label {
+      font-size: 0.8rem;
+      line-height: 1.45;
+      color: var(--text-mid);
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 3rem 0;
+    }
+
+    /* AUTHOR BIO */
+    .author-bio {
+      background: var(--cream);
+      border-radius: 4px;
+      padding: 2rem;
+      margin: 3.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .author-bio .bio-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    .author-bio .bio-name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+
+    .author-bio .bio-text {
+      font-size: 0.92rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .author-bio a {
+      display: inline-block;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      text-decoration: none;
+      border-bottom: 1px solid var(--accent-green-light);
+      padding-bottom: 1px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .author-bio a:hover {
+      color: var(--text-dark);
+      border-color: var(--text-dark);
+    }
+
+    /* CONTINUE READING */
+    .continue-reading {
+      margin: 3.5rem 0 0;
+    }
+
+    .continue-reading .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .post-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .post-card {
+      background: var(--cream);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+    }
+
+    .post-card .card-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 0.6rem;
+    }
+
+    .post-card h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: normal;
+      line-height: 1.35;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+
+    .post-card p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+      margin-bottom: 0.75rem;
+    }
+
+    .post-card .coming-soon {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      padding: 4rem 2rem;
+      text-align: center;
+      margin-top: 5rem;
+    }
+
+    .cta-section .cta-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-green);
+      margin-bottom: 1rem;
+    }
+
+    .cta-section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      font-weight: normal;
+      line-height: 1.25;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-section h2 em {
+      font-style: italic;
+      color: var(--text-mid);
+    }
+
+    .cta-section p {
+      color: var(--text-mid);
+      font-size: 0.95rem;
+      margin-bottom: 2rem;
+      max-width: 420px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--text-dark);
+      color: var(--warm-white);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 0.85rem 2rem;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn:hover { background: var(--text-mid); }
+
+    .cta-alt {
+      margin-top: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-light);
+    }
+
+    .cta-alt a {
+      color: var(--text-mid);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .hero { padding: 2.5rem 1.25rem 1.5rem; }
+      .article { padding: 2rem 1.25rem 4rem; }
+      .data-grid { grid-template-columns: 1fr 1fr; }
+      .cta-section { padding: 3rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="http://seededincuriosity.com/index.html" class="nav-brand">Seeded in Curiosity</a>
+    <a href="http://seededincuriosity.com/blog.html" class="nav-back">← Back to journal</a>
+    <ul class="nav-links">
+      <li><a href="http://seededincuriosity.com/index.html">Home</a></li>
+      <li><a href="http://seededincuriosity.com/about.html">About</a></li>
+      <li><a href="http://seededincuriosity.com/blog.html">Journal</a></li>
+      <li><a href="http://seededincuriosity.com/intake.html">Work with me</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <p class="eyebrow">Hormones and Women's Health</p>
+    <h1>Curiosity as a <em>Diagnosis</em></h1>
+    <div class="meta">
+      <span>Jordan Maher</span>
+      <span>June 2026</span>
+      <span>8 min read</span>
+    </div>
+  </header>
+
+  <article class="article">
+
+    <p>For years, I knew something was wrong.</p>
+
+    <p>Not in a dramatic way. In a quiet, persistent, easy-to-dismiss way. The kind of wrong that gets labeled stress, or anxiety, or just being sensitive. The kind of wrong that gets a shrug and a pamphlet and a "let's check back in six months."</p>
+
+    <p>I recently received diagnoses of PCOS and Endometriosis.</p>
+
+    <p>I am not writing this for sympathy. I am writing this because I know I am not the only one who spent years feeling like my body was speaking a language no one around me would learn.</p>
+
+    <hr class="divider" />
+
+    <h2>The Gap Is Real, and It Is <em>Not Your Fault</em></h2>
+
+    <p>Here is something that does not get said enough: what is happening to women in these appointments is not random. It is structural.</p>
+
+    <p>Until 1993, it was both normal and acceptable for drugs and vaccines to be tested only on men. The findings were then applied universally, as if female hormones, cycles, and biology were simply minor variations on a standard template. Women make up 60 percent of the patient population but only 42 percent of clinical trial participants. We are being treated with data that was never built around us.</p>
+
+    <p>And the conditions that affect us most are getting the least attention. Research funding for endometriosis translates to roughly two dollars per patient per year. Two dollars. For a condition that begins, on average, in adolescence.</p>
+
+    <div class="data-callout">
+      <h3>The numbers behind the dismissal</h3>
+      <div class="data-grid">
+        <div class="data-item">
+          <span class="number">~9 yrs</span>
+          <span class="label">Average time for a symptomatic woman to receive an endometriosis diagnosis, a delay that is still increasing</span>
+        </div>
+        <div class="data-item">
+          <span class="number">70%</span>
+          <span class="label">Of people with PCOS remain undiagnosed, despite it affecting roughly 1 in 10 women of reproductive age</span>
+        </div>
+        <div class="data-item">
+          <span class="number">78%</span>
+          <span class="label">Of women with endometriosis reported being told by a doctor they were making a fuss about nothing</span>
+        </div>
+        <div class="data-item">
+          <span class="number">$2</span>
+          <span class="label">Per patient per year is what endometriosis research receives in funding</span>
+        </div>
+      </div>
+    </div>
+
+    <p>But here is the part that never makes it into the statistics: what happens in the waiting room during all of those years.</p>
+
+    <p>Girls and women are told their pain is a normal part of having a period. They are handed a prescription for hormonal birth control, often without any explanation of what is actually happening in their body, what the medication is doing, or what it might be masking. Research shows that birth control can suppress the very symptoms that would otherwise lead to a diagnosis, meaning women can go years without realizing those symptoms are pointing to something real.</p>
+
+    <p>This is not a failure of individual providers. Many of them genuinely do not have the training. Research consistently shows that one of the biggest barriers to diagnosis is encountering physicians who lack sufficient knowledge of these conditions. The gap exists in the education system long before it reaches the exam room.</p>
+
+    <div class="pullquote">
+      <p>"The women who finally get answers are, overwhelmingly, the women who learned enough to ask the right questions."</p>
+    </div>
+
+    <p>Which is exactly why patient advocacy and self-education are not optional extras right now. They are the gap-fillers. The women who finally get answers are, overwhelmingly, the women who learned enough to ask the right questions, to push back on a dismissal, to find a provider who would actually listen. Research confirms that women describe benefiting significantly from self-advocacy and self-education about their conditions when the medical system failed to provide answers.</p>
+
+    <p>That is not how it should work. But it is where we are. And until the research catches up, having someone in your corner who knows the right questions to ask is one of the most powerful tools available to you.</p>
+
+    <hr class="divider" />
+
+    <h2>The Shift That <em>Changed Everything</em></h2>
+
+    <p>At some point, my frustration ran out of room to go. So it turned into something else.</p>
+
+    <p>Curiosity.</p>
+
+    <p>I started researching. I listened to experts in hormone health and women's physiology. I learned how cycle phases affect energy, mood, and cognitive function. I learned how inflammation shows up in the body long before it shows up on a standard panel. I started asking different questions, and eventually, I found providers who were willing to ask them too.</p>
+
+    <p>That pivot, from feeling dismissed to becoming deeply curious about my own body, did not just lead me to a diagnosis. It changed how I understand the relationship between physical health, emotional patterns, and overall wellbeing. It is a large part of why I do this work.</p>
+
+    <hr class="divider" />
+
+    <h2>What I Want You to <em>Take From This</em></h2>
+
+    <p>If something in your body has been whispering, or honestly yelling, and you keep being told it is nothing: stay curious.</p>
+
+    <p>You are not dramatic. You are not oversensitive. You are a person living inside a complex, intelligent system that is constantly communicating with you.</p>
+
+    <p>Curiosity is not just a mindset. In the context of your health, it is an act of self-advocacy. It is the thing that keeps you asking the next question when the first answer does not feel complete. It is what podcasts, communities, and coaches exist to support, because right now the system is not set up to do it for you.</p>
+
+    <p><strong>Your body has been trying to tell you something. It is worth learning to listen.</strong></p>
+
+    <div class="author-bio">
+      <span class="bio-label">About the author</span>
+      <span class="bio-name">Jordan Maher</span>
+      <p class="bio-text">Jordan is the founder of Seeded in Curiosity, a holistic wellness coaching practice for women. She works at the intersection of behavioral health, nervous system regulation, and whole-person wellness, and she has lived most of what she writes about.</p>
+      <a href="http://seededincuriosity.com/intake.html">Work with Jordan</a>
+    </div>
+
+    <div class="continue-reading">
+      <p class="section-label">Continue reading</p>
+      <div class="post-cards">
+        <div class="post-card">
+          <p class="card-eyebrow">Psychology of behavior</p>
+          <h4>The $10 Coffee When You're in Debt</h4>
+          <p>You know it doesn't make sense. You do it anyway. The psychology behind why we dig the hole deeper when we feel most stuck.</p>
+          <a href="http://seededincuriosity.com/blog-spending-loop.html" style="font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent-green);text-decoration:none;">Read more</a>
+        </div>
+        <div class="post-card">
+          <p class="card-eyebrow">Nervous system</p>
+          <h4>You Don't Have a Discipline Problem</h4>
+          <p>You have a nervous system that was never given the right conditions to change.</p>
+          <span class="coming-soon">Coming soon</span>
+        </div>
+      </div>
+    </div>
+
+  </article>
+
+  <section class="cta-section">
+    <p class="cta-label">Ready to begin</p>
+    <h2>Let's find the <em>root of it.</em></h2>
+    <p>Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
+    <a href="http://seededincuriosity.com/intake.html" class="btn">Fill out your intake form</a>
+    <p class="cta-alt">Or <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8">schedule a free 20-minute chat</a> first.</p>
+    <p class="cta-alt" style="margin-top:0.5rem;">Questions? <a href="mailto:seededincuriosity@gmail.com">seededincuriosity@gmail.com</a></p>
+  </section>
+
+  <footer>
+    © 2026 Seeded in Curiosity · Jordan Maher · Holistic Wellness Coaching for Women · seededincuriosity@gmail.com
+  </footer>
+
+</body>
+</html>
