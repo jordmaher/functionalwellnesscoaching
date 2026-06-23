@@ -216,8 +216,8 @@
 
   .data-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .data-item {
@@ -376,7 +376,7 @@
     .nav-logo { font-size: 1rem; white-space: nowrap; }
     .post-hero { padding: 6rem 1.25rem 2.5rem; }
     .post-body { padding: 0 1.25rem 4rem; }
-    .data-grid { grid-template-columns: 1fr 1fr; }
+    .data-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   }
 </style>
 </head>
