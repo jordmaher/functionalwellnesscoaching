@@ -11,6 +11,7 @@
   :root {
     --sage: #7A9E7E;
     --clay: #A0855B;
+    --terracotta: #B85C38;
     --bark: #6B4E3D;
     --cream: #F5F0E8;
     --linen: #EDE8DE;
@@ -83,12 +84,12 @@
     text-decoration: none;
     font-weight: 400;
     padding: 0.55rem 1.2rem;
-    border: 0.5px solid var(--clay);
+    border: 0.5px solid var(--terracotta);
     border-radius: 2px;
     transition: all 0.2s;
   }
 
-  .nav-cta:hover { background: var(--clay); color: var(--white); }
+  .nav-cta:hover { background: var(--terracotta); color: var(--white); }
 
   .about-hero {
     padding: 8rem 2.5rem 4rem;
@@ -108,13 +109,13 @@
   .about-hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.1;
     color: var(--soil);
     margin-bottom: 1.5rem;
   }
 
-  .about-hero-title em { font-style: italic; color: var(--clay); }
+  .about-hero-title em { font-style: italic; color: var(--terracotta); }
 
   section { padding: 5rem 2.5rem; }
 
@@ -132,13 +133,13 @@
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.2;
     color: var(--soil);
     margin-bottom: 1.5rem;
   }
 
-  .section-title em { font-style: italic; color: var(--clay); }
+  .section-title em { font-style: italic; color: var(--terracotta); }
 
   /* PROFILE */
   .profile { background: var(--white); }
@@ -310,7 +311,7 @@
     display: block;
     max-width: 320px;
     margin: 0 auto 1.25rem;
-    background: var(--bark);
+    background: var(--terracotta);
     color: var(--cream);
     text-decoration: none;
     padding: 1.1rem 2.8rem;
@@ -323,6 +324,25 @@
   }
 
   .booking-cta:hover { background: var(--soil); }
+
+  .booking-cta-secondary {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 1.25rem;
+    background: transparent;
+    color: var(--bark);
+    border: 0.5px solid var(--sage);
+    text-decoration: none;
+    padding: 1rem 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .booking-cta-secondary:hover { background: var(--sage); color: var(--soil); }
 
   .booking-note {
     font-size: 0.8rem;
@@ -454,7 +474,7 @@
     <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
     <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
     <a href="intake.html" class="booking-cta">Fill out your intake form</a>
-    <p class="booking-note">Or book a discovery call first: <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" style="color: var(--clay); text-decoration: underline; font-style: italic;">schedule a free 20-minute chat</a></p>
+    <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" class="booking-cta-secondary">Schedule a discovery call</a>
   </div>
 </section>
 

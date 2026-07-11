@@ -11,6 +11,7 @@
   :root {
     --sage: #7A9E7E;
     --clay: #A0855B;
+    --terracotta: #B85C38;
     --bark: #6B4E3D;
     --cream: #F5F0E8;
     --linen: #EDE8DE;
@@ -81,12 +82,12 @@
     text-decoration: none;
     font-weight: 400;
     padding: 0.6rem 1.4rem;
-    border: 0.5px solid var(--clay);
+    border: 0.5px solid var(--terracotta);
     border-radius: 2px;
     transition: all 0.2s;
   }
 
-  .nav-link:hover { background: var(--clay); color: var(--white); }
+  .nav-link:hover { background: var(--terracotta); color: var(--white); }
 
   /* HERO */
   .hero {
@@ -129,14 +130,14 @@
   .hero-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.1;
     color: var(--soil);
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
   }
 
-  .hero-title em { font-style: italic; color: var(--clay); }
+  .hero-title em { font-style: italic; color: var(--terracotta); }
 
   .hero-sub {
     font-size: 1.05rem;
@@ -149,7 +150,7 @@
 
   .hero-cta {
     display: inline-block;
-    background: var(--bark);
+    background: var(--terracotta);
     color: var(--cream);
     text-decoration: none;
     padding: 1rem 2.2rem;
@@ -220,13 +221,13 @@
   .section-title {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.2;
     color: var(--soil);
     margin-bottom: 1.5rem;
   }
 
-  .section-title em { font-style: italic; color: var(--clay); }
+  .section-title em { font-style: italic; color: var(--terracotta); }
 
   /* FOR YOU */
   .for-you { background: var(--linen); }
@@ -363,6 +364,15 @@
     color: var(--soil);
     opacity: 0.8;
     line-height: 1.75;
+  }
+
+  .wp-item .wp-item-note {
+    font-size: 0.78rem;
+    color: var(--clay);
+    font-style: italic;
+    opacity: 1;
+    margin-top: 0.75rem;
+    line-height: 1.6;
   }
 
   .wp-note {
@@ -646,7 +656,7 @@
     display: block;
     max-width: 320px;
     margin: 0 auto 1.25rem;
-    background: var(--bark);
+    background: var(--terracotta);
     color: var(--cream);
     text-decoration: none;
     padding: 1.1rem 2.8rem;
@@ -660,10 +670,38 @@
 
   .booking-cta:hover { background: var(--soil); }
 
+  .booking-cta-secondary {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 1.25rem;
+    background: transparent;
+    color: var(--bark);
+    border: 0.5px solid var(--sage);
+    text-decoration: none;
+    padding: 1rem 2.8rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 400;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+
+  .booking-cta-secondary:hover { background: var(--sage); color: var(--soil); }
+
   .booking-note {
     font-size: 0.8rem;
     color: var(--clay);
     letter-spacing: 0.05em;
+  }
+
+  .booking-disclaimer {
+    font-size: 0.78rem;
+    color: var(--bark);
+    opacity: 0.75;
+    font-style: italic;
+    margin-top: 1.25rem;
+    line-height: 1.6;
   }
 
   /* FOOTER */
@@ -718,7 +756,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Holistic wellness coaching for women</p>
     <h1 class="hero-title">Your body has been<br>trying to tell you<br><em>something.</em></h1>
-    <p class="hero-sub">You are not broken. You are not lazy. You are a woman with a beautifully complex body that nobody ever taught you how to understand. That changes here.</p>
+    <p class="hero-sub">You're not broken, and you're not lazy. You're a high-performing woman whose body has been running without an instruction manual. That changes here.</p>
     <a href="#booking" class="hero-cta">Start the conversation</a>
   </div>
   <div class="hero-seed">
@@ -809,8 +847,8 @@
 <section class="whole-picture" id="whole-picture">
   <div class="container">
     <p class="section-eyebrow">What makes this different</p>
-    <h2 class="section-title">We look at things most<br>coaches <em>never ask about.</em></h2>
-    <p class="wp-intro">Real root cause work means seeing the full picture. That includes the things that often get left out of wellness conversations entirely.</p>
+    <h2 class="section-title">We start where most<br>wellness programs <em>stop.</em></h2>
+    <p class="wp-intro">Most wellness coaching stops at habits. We start with what's actually running the system underneath them: the parts other programs leave out.</p>
     <div class="wp-grid">
       <div class="wp-item">
         <h3>What is actually in your system</h3>
@@ -819,6 +857,7 @@
       <div class="wp-item">
         <h3>The conversations your doctor hasn't had with you</h3>
         <p>SSRIs and stimulants can affect your energy, libido, sleep architecture, and emotional range in ways nobody explains. We educate, we explore, and we help you bring better questions to your care team.</p>
+        <p class="wp-item-note">A quick note: I'm a wellness coach in training, not a doctor — this is education, not medical advice.</p>
       </div>
       <div class="wp-item">
         <h3>The patterns that feel shameful</h3>
@@ -871,7 +910,8 @@
     <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
     <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
     <a href="intake.html" class="booking-cta">Fill out your intake form</a>
-    <p class="booking-note">Or book a discovery call first: <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" style="color: var(--clay); text-decoration: underline; font-style: italic;">schedule a free 20-minute chat</a></p>
+    <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" class="booking-cta-secondary">Schedule a discovery call</a>
+    <p class="booking-disclaimer">Wellness coaching is educational, not medical or psychological treatment. I'm not a doctor or therapist.</p>
   </div>
 </section>
 
