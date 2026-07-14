@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why You Feel Like a Different Person Every Two Weeks | Seeded in Curiosity</title>
+<meta name="description" content="For most of my teenage years I assumed the monthly shifts in how I felt were just me. What I found when I started paying attention changed how I understood everything.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #7A9E7E;
+    --clay: #A0855B;
+    --terracotta: #B85C38;
+    --bark: #6B4E3D;
+    --cream: #F5F0E8;
+    --linen: #EDE8DE;
+    --soil: #2C2018;
+    --mist: #D4C9B8;
+    --white: #FDFAF6;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--white);
+    color: var(--soil);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.25rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(253, 250, 246, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 0.5px solid var(--mist);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--soil);
+    text-decoration: none;
+  }
+
+  .nav-logo span { color: var(--sage); }
+
+  .nav-back {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    color: var(--bark);
+    text-decoration: none;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: color 0.15s;
+  }
+
+  .nav-back:hover { color: var(--soil); }
+
+  .post-hero {
+    padding: 8rem 2.5rem 4rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .post-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .post-eyebrow span {
+    width: 24px;
+    height: 0.5px;
+    background: var(--sage);
+    display: inline-block;
+  }
+
+  .post-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--soil);
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .post-title em { font-style: italic; color: var(--terracotta); }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 0;
+    border-top: 0.5px solid var(--mist);
+    border-bottom: 0.5px solid var(--mist);
+    margin-bottom: 3rem;
+  }
+
+  .post-author { font-size: 0.85rem; color: var(--bark); font-weight: 400; }
+  .post-date { font-size: 0.8rem; color: var(--mist); letter-spacing: 0.05em; }
+  .post-read { font-size: 0.8rem; color: var(--clay); font-style: italic; margin-left: auto; }
+
+  .post-body {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 2.5rem 6rem;
+  }
+
+  .post-body p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--soil);
+    margin-bottom: 1.75rem;
+    font-weight: 300;
+  }
+
+  .post-body p strong { font-weight: 500; color: var(--bark); }
+
+  .post-body h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--soil);
+    margin: 3rem 0 1.25rem;
+    line-height: 1.2;
+  }
+
+  .post-body h2 em { font-style: italic; color: var(--terracotta); }
+
+  .pull-quote {
+    border-left: 2px solid var(--sage);
+    padding: 1.25rem 1.75rem;
+    margin: 2.5rem 0;
+    background: var(--linen);
+    border-radius: 0 2px 2px 0;
+  }
+
+  .pull-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-style: italic;
+    font-weight: 300;
+    color: var(--bark);
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2.5rem 0;
+  }
+
+  .phase-card {
+    background: var(--cream);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 1.5rem;
+  }
+
+  .phase-card .phase-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .phase-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.6rem;
+  }
+
+  .phase-card p {
+    font-size: 0.88rem;
+    color: var(--soil);
+    line-height: 1.7;
+    margin-bottom: 0;
+  }
+
+  .callout-box {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+
+  .callout-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--bark);
+    margin-bottom: 0.75rem;
+  }
+
+  .callout-box ul { list-style: none; padding: 0; }
+
+  .callout-box ul li {
+    font-size: 0.95rem;
+    color: var(--soil);
+    padding: 0.4rem 0 0.4rem 1.25rem;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .callout-box ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--sage);
+  }
+
+  .divider { width: 40px; height: 0.5px; background: var(--mist); margin: 3rem 0; }
+
+  .author-box {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 2rem;
+    margin: 3rem 0;
+  }
+
+  .author-box-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.75rem;
+  }
+
+  .author-box-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--soil);
+    margin-bottom: 0.5rem;
+  }
+
+  .author-box p { font-size: 0.9rem; color: var(--bark); margin-bottom: 1rem; }
+
+  .author-box-cta {
+    display: inline-block;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 0.5px solid var(--sage);
+    padding-bottom: 2px;
+    transition: color 0.15s;
+  }
+
+  .author-box-cta:hover { color: var(--bark); }
+
+  .next-posts { border-top: 0.5px solid var(--mist); padding-top: 2.5rem; margin-top: 2rem; }
+
+  .next-posts-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+  }
+
+  .next-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .next-card {
+    background: var(--linen);
+    border: 0.5px solid var(--mist);
+    border-radius: 2px;
+    padding: 1.5rem;
+    text-decoration: none;
+    display: block;
+    transition: background 0.15s;
+  }
+
+  a.next-card:hover { background: var(--cream); }
+
+  .next-card-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 0.5rem;
+  }
+
+  .next-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--bark);
+    line-height: 1.3;
+    margin-bottom: 0.5rem;
+  }
+
+  .next-card p { font-size: 0.82rem; color: var(--soil); opacity: 0.7; line-height: 1.5; margin: 0; }
+
+  footer {
+    background: var(--soil);
+    color: var(--mist);
+    padding: 2.5rem;
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--sage); }
+
+  @media (max-width: 768px) {
+    nav { padding: 0.85rem 1rem; flex-wrap: nowrap; gap: 0.5rem; }
+    .nav-logo { font-size: 1rem; white-space: nowrap; }
+    .post-hero { padding: 6rem 1.25rem 2.5rem; }
+    .post-body { padding: 0 1.25rem 4rem; }
+    .phase-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Seeded in <span>Curiosity</span></a>
+  <a href="blog.html" class="nav-back">&#8592; Back to journal</a>
+</nav>
+
+<div class="post-hero">
+  <p class="post-eyebrow"><span></span>Hormones and Energy</p>
+  <h1 class="post-title">Why You Feel Like a Different Person<br><em>Every Two Weeks</em></h1>
+  <div class="post-meta">
+    <span class="post-author">Jordan Maher</span>
+    <span class="post-date">July 2026</span>
+    <span class="post-read">9 min read</span>
+  </div>
+</div>
+
+<div class="post-body">
+
+  <p>For most of my teenage years and into my early twenties, I felt like I was running two different lives inside the same body.</p>
+
+  <p>Some weeks I felt on top of the world. Clear, energized, social, like I was genuinely glowing. Other weeks, without any obvious reason, everything shifted. I felt annoyed and agitated at things that would not normally bother me. Anxious for no reason I could name. Sometimes a sudden sadness would arrive that had nothing to do with what was actually happening in my life. During certain phases I felt ugly, out of control mentally, and completely unlike myself.</p>
+
+  <p>I never brought it up. Not to my girlfriends. Not to my doctors. I assumed it was just me.</p>
+
+  <p>I also spent years being labeled by family members as forgetful, careless, and lazy. None of those words ever felt true to who I actually was, and the gap between how others saw me and how I experienced myself was genuinely confusing. I could not pay attention the way other kids could. Background noises pulled me out of everything. I felt the emotions of the people around me so intensely that I could not always separate their feelings from my own. I felt strange, and honestly a little dumb, for being that way.</p>
+
+  <p>What nobody told me was that these two experiences, the monthly shifts in who I felt like and the way my brain processed the world differently, were connected. And that neither of them was a character flaw.</p>
+
+  <h2>I Hit a Wall in My <em>Early Twenties</em></h2>
+
+  <p>I had spent my entire teenage years being handed birth control as the only answer to painful cycles. No education on what my cycle actually meant. No explanation of what hormones do to your body, your brain, your mood, your focus. No acknowledgment that the pain I was experiencing was real and worth investigating.</p>
+
+  <p>At some point I realized that my life was going to be significantly harder than it needed to be if I did not start advocating for myself. So I got curious.</p>
+
+  <p>I saw multiple OBGYNs. I got an Oura Ring. I stopped all pills and supplements and started a holistic approach to try to understand what was actually happening in my body. The most powerful tool I found was also the simplest one: listening.</p>
+
+  <p>What I found when I started paying attention changed how I understood everything.</p>
+
+  <h2>What Is Actually Happening <em>in Your Body</em></h2>
+
+  <p>Your menstrual cycle moves through four phases: menstrual, follicular, ovulatory, and luteal. Each phase is driven by a different hormonal environment. And each one changes how your brain actually works.</p>
+
+  <p>Think of it like your brain running four different operating modes every month. The software updates without asking you first.</p>
+
+  <div class="phase-grid">
+    <div class="phase-card">
+      <span class="phase-label">Phase 1</span>
+      <h3>Menstrual</h3>
+      <p>Estrogen and progesterone are both low. Energy dips. The body is asking for rest. This is not laziness. It is biology asking you to slow down.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-label">Phase 2</span>
+      <h3>Follicular</h3>
+      <p>Estrogen begins rising. Dopamine and serotonin follow. Focus sharpens. Energy builds. Most women feel most like themselves during this phase.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-label">Phase 3</span>
+      <h3>Ovulatory</h3>
+      <p>Estrogen peaks. Many women feel their most confident, social, and capable during this short window. A 2024 neuroimaging study confirmed that brain network connectivity measurably changes here.</p>
+    </div>
+    <div class="phase-card">
+      <span class="phase-label">Phase 4</span>
+      <h3>Luteal</h3>
+      <p>Estrogen drops. Dopamine signaling in the prefrontal cortex decreases with it. Serotonin falls. An estimated 7 in 10 women experience measurable shifts in how they think and feel during this phase.</p>
+    </div>
+  </div>
+
+  <p>During the follicular phase, rising estrogen supports dopamine, the brain chemical responsible for focus, motivation, and feeling good. It also supports serotonin, which stabilizes mood. When estrogen is rising, most women feel sharper, more social, more energized, and more like themselves. That glowing feeling is real and it has a biological explanation.</p>
+
+  <p>For women with inattentive ADHD, this phase can feel like the first time all month that the brain is actually cooperating. That is not a coincidence. Estrogen directly modulates dopamine, the same neurotransmitter that ADHD medications are designed to support. When estrogen is high, the ADHD brain gets a natural assist it does not always have access to.</p>
+
+  <p>Then comes the luteal phase. As estrogen drops, dopamine signaling in the prefrontal cortex, the part of your brain that handles decision making, focus, and emotional regulation, decreases. Serotonin availability drops too. The brain fog is real. The irritability is real. The sadness that arrives without an obvious reason is real. Your nervous system simply has fewer resources during this window. That is not weakness. That is biology.</p>
+
+  <p>For women with inattentive ADHD, this drop hits even harder. Research published in the Journal of Attention Disorders found that women with ADHD experience significantly more severe premenstrual symptoms than women without ADHD, and that these hormonal shifts can temporarily disrupt the neurological support that estrogen was quietly providing. Symptoms that were manageable two weeks ago can suddenly feel overwhelming. The difficulty focusing intensifies. Emotional regulation becomes harder. Sensitivity to sounds and to the feelings of others, something I have lived with my entire life and am still actively working on, amplifies.</p>
+
+  <p>For women who were never diagnosed, or who were labeled forgetful or overly sensitive instead of being understood, this information reframes years of self-blame into something with a clear biological explanation. The labels were never accurate. The hormonal shifts were always real.</p>
+
+  <div class="pull-quote">
+    <p>"Your cycle is not making you dramatic. It is shifting your brain chemistry in measurable, predictable ways. That is not something to manage. It is something to understand."</p>
+  </div>
+
+  <h2>The Thing That <em>Surprised Me Most</em></h2>
+
+  <p>When I finally started researching and listening to my body, I discovered that almost everything I had been experiencing was common. Normal. Shared by the majority of women around me.</p>
+
+  <p>What was more shocking than the symptoms themselves was the silence around them. These shifts are not being discussed openly between friends. They are not being explained in OB appointments. They are not being taught to teenage girls before they spend years assuming something is wrong with them specifically.</p>
+
+  <p>I am still curious about why. Is it stigma around women talking openly about their bodies? Is it the medical system's historical tendency to minimize and dismiss women's experiences? Is it that every woman assumes her situation is hers alone, too embarrassed or unsure to bring it up?</p>
+
+  <p>Probably all three. And that gap between what is happening in women's bodies and what women actually understand about it is exactly why I do this work.</p>
+
+  <p><strong>If I am not the expert of my own body, then who can be?</strong></p>
+
+  <h2>What to Do <em>With This</em></h2>
+
+  <p>You do not need to restructure your life around your cycle. But you do deserve to understand it.</p>
+
+  <div class="callout-box">
+    <h4>Three places to start</h4>
+    <ul>
+      <li>Track for one full month. Note your energy, mood, focus, appetite, and social capacity each day. Patterns will emerge that were always there but invisible because nobody gave you the framework to see them.</li>
+      <li>Stop performing consistency. Your brain does not have the same resources every week of the month. Working with that reality instead of against it is not a compromise. It is intelligence.</li>
+      <li>If you have spent years being told you are too sensitive, too forgetful, too emotional, or too much: consider the possibility that you were never any of those things. You were just never given the information you needed to understand yourself.</li>
+    </ul>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="author-box">
+    <p class="author-box-label">About the author</p>
+    <p class="author-box-name">Jordan Maher</p>
+    <p>Jordan is the founder of Seeded in Curiosity, a holistic wellness coaching practice for women. She works at the intersection of behavioral health, nervous system regulation, and whole-person wellness, and she has lived what she writes about.</p>
+    <a href="intake.html" class="author-box-cta">Learn to understand your body and finally ask the right questions. Book a free discovery call with Jordan.</a>
+  </div>
+
+  <div class="next-posts">
+    <p class="next-posts-label">Continue reading</p>
+    <div class="next-grid">
+      <a href="blog-curiosity-diagnosis.html" class="next-card">
+        <p class="next-card-eyebrow">Hormones and Women's Health</p>
+        <h3>Curiosity as a Diagnosis</h3>
+        <p>I spent years being told my symptoms were normal. They were not. Here is what happened when I started asking better questions.</p>
+      </a>
+      <a href="blog-nature-walks.html" class="next-card">
+        <p class="next-card-eyebrow">Nervous system and nature</p>
+        <h3>The 15-Minute Walk That Changed How I Work, Rest, and Reset</h3>
+        <p>I have been taking walks in nature for years. What I found when I looked into why was too good not to share.</p>
+      </a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 <span>Seeded in Curiosity</span> &nbsp;·&nbsp; Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
+</footer>
+
+</body>
+</html>
