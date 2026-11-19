@@ -4,513 +4,117 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The 15-Minute Walk That Changed How I Work, Rest, and Reset | Seeded in Curiosity</title>
-<meta name="description" content="I have been taking walks in nature for years. At some point I got curious enough to actually look it up. What I found was too good not to share.">
+<meta name="description" content="I've taken walks in nature for years. When I finally looked into why they help so much, the research was more specific than I expected.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --sage: #7A9E7E;
-    --clay: #A0855B;
-    --terracotta: #B85C38;
-    --bark: #6B4E3D;
-    --cream: #F5F0E8;
-    --linen: #EDE8DE;
-    --soil: #2C2018;
-    --mist: #D4C9B8;
-    --white: #FDFAF6;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--white);
-    color: var(--soil);
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.25rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(253, 250, 246, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 0.5px solid var(--mist);
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: var(--soil);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--sage); }
-
-  .nav-back {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    color: var(--bark);
-    text-decoration: none;
-    font-weight: 400;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: color 0.15s;
-  }
-
-  .nav-back:hover { color: var(--soil); }
-
-  /* HERO */
-  .post-hero {
-    padding: 8rem 2.5rem 3rem;
-    max-width: 760px;
-    margin: 0 auto;
-  }
-
-  .post-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 400;
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .post-eyebrow span {
-    width: 24px;
-    height: 0.5px;
-    background: var(--sage);
-    display: inline-block;
-  }
-
-  .post-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--soil);
-    margin-bottom: 1.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .post-title em { font-style: italic; color: var(--terracotta); }
-
-  .post-meta {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    padding: 1.25rem 0;
-    border-top: 0.5px solid var(--mist);
-    border-bottom: 0.5px solid var(--mist);
-    margin-bottom: 2.5rem;
-  }
-
-  .post-author {
-    font-size: 0.85rem;
-    color: var(--bark);
-    font-weight: 400;
-  }
-
-  .post-date {
-    font-size: 0.8rem;
-    color: var(--mist);
-    letter-spacing: 0.05em;
-  }
-
-  .post-read {
-    font-size: 0.8rem;
-    color: var(--clay);
-    font-style: italic;
-    margin-left: auto;
-  }
-
-  /* HERO IMAGE */
-  .post-hero-image {
-    max-width: 760px;
-    margin: 0 auto 3rem;
-    padding: 0 2.5rem;
-  }
-
-  .post-hero-image img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    object-position: center 65%;
-    border-radius: 2px;
-    display: block;
-  }
-
-  /* BODY */
-  .post-body {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 0 2.5rem 6rem;
-  }
-
-  .post-body p {
-    font-size: 1.05rem;
-    line-height: 1.9;
-    color: var(--soil);
-    margin-bottom: 1.75rem;
-    font-weight: 300;
-  }
-
-  .post-body p strong {
-    font-weight: 500;
-    color: var(--bark);
-  }
-
-  .post-body h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.8rem;
-    font-weight: 300;
-    color: var(--soil);
-    margin: 3rem 0 1.25rem;
-    line-height: 1.2;
-  }
-
-  .post-body h2 em {
-    font-style: italic;
-    color: var(--clay);
-  }
-
-  .post-body h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--bark);
-    margin: 2rem 0 0.75rem;
-  }
-
-  .pull-quote {
-    border-left: 2px solid var(--sage);
-    padding: 1.25rem 1.75rem;
-    margin: 2.5rem 0;
-    background: var(--linen);
-    border-radius: 0 2px 2px 0;
-  }
-
-  .pull-quote p {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.4rem;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--bark);
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .callout-box {
-    background: var(--cream);
-    border: 0.5px solid var(--mist);
-    border-radius: 2px;
-    padding: 1.75rem 2rem;
-    margin: 2.5rem 0;
-  }
-
-  .callout-box h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: var(--bark);
-    margin-bottom: 0.75rem;
-  }
-
-  .callout-box ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .callout-box ul li {
-    font-size: 0.95rem;
-    color: var(--soil);
-    padding: 0.4rem 0;
-    padding-left: 1.25rem;
-    position: relative;
-    line-height: 1.6;
-  }
-
-  .callout-box ul li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.75rem;
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--sage);
-  }
-
-  .divider {
-    width: 40px;
-    height: 0.5px;
-    background: var(--mist);
-    margin: 3rem 0;
-  }
-
-  /* AUTHOR BOX */
-  .author-box {
-    background: var(--linen);
-    border: 0.5px solid var(--mist);
-    border-radius: 2px;
-    padding: 2rem;
-    margin: 3rem 0;
-  }
-
-  .author-box-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 0.75rem;
-  }
-
-  .author-box-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--soil);
-    margin-bottom: 0.5rem;
-  }
-
-  .author-box p {
-    font-size: 0.9rem;
-    color: var(--bark);
-    margin-bottom: 1rem;
-  }
-
-  .author-box-cta {
-    display: inline-block;
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sage);
-    text-decoration: none;
-    border-bottom: 0.5px solid var(--sage);
-    padding-bottom: 2px;
-    transition: color 0.15s;
-  }
-
-  .author-box-cta:hover { color: var(--bark); }
-
-  /* NEXT POSTS */
-  .next-posts {
-    border-top: 0.5px solid var(--mist);
-    padding-top: 2.5rem;
-    margin-top: 2rem;
-  }
-
-  .next-posts-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 1.5rem;
-  }
-
-  .next-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 1.5rem;
-  }
-
-  .next-card {
-    background: var(--linen);
-    border: 0.5px solid var(--mist);
-    border-radius: 2px;
-    padding: 1.5rem;
-    text-decoration: none;
-    display: block;
-    transition: background 0.15s;
-  }
-
-  a.next-card:hover { background: var(--cream); }
-
-  .next-card-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 0.5rem;
-  }
-
-  .next-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem;
-    font-weight: 400;
-    color: var(--bark);
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
-  }
-
-  .next-card p {
-    font-size: 0.82rem;
-    color: var(--soil);
-    opacity: 0.7;
-    line-height: 1.5;
-    margin: 0;
-  }
-
-  .coming-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mist);
-    margin-top: 0.75rem;
-    display: block;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--soil);
-    color: var(--mist);
-    padding: 2.5rem;
-    text-align: center;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
-
-  footer span { color: var(--sage); }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.25rem; }
-    .nav-logo { font-size: 1rem; white-space: nowrap; }
-    .post-hero { padding: 6rem 1.25rem 2rem; }
-    .post-hero-image { padding: 0 1.25rem; }
-    .post-hero-image img { height: 320px; }
-    .post-body { padding: 0 1.25rem 4rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2026-11-19f">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Seeded in <span>Curiosity</span></a>
-  <a href="blog.html" class="nav-back">&#8592; Back to journal</a>
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img class="logo-mark" src="logo-mark.svg" alt="" width="28" height="40">Seeded in <span>Curiosity</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work-with-me.html">Work with me</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="blog.html" aria-current="page">Journal</a></li>
+      <li><a class="btn" href="https://calendar.app.google/WKxrUqDKMEF12j2i7">Book a free call</a></li>
+    </ul>
+  </div>
 </nav>
 
-<div class="post-hero">
-  <p class="post-eyebrow"><span></span>Nervous System and Nature</p>
-  <h1 class="post-title">The 15-Minute Walk That Changed<br>How I <em>Work, Rest, and Reset</em></h1>
-  <div class="post-meta">
-    <span class="post-author">Jordan Maher</span>
-    <span class="post-date">June 2026</span>
-    <span class="post-read">8 min read</span>
+<header class="page-head post-head">
+  <div class="wrap narrow">
+    <p class="eyebrow">Resetting</p>
+    <h1>The 15-minute walk that changed how I <em>work, rest, and reset.</em></h1>
+    <p class="post-meta">Jordan Maher · June 2026 · 6 min read</p>
   </div>
-</div>
+</header>
 
-<!-- HERO IMAGE -->
-<!-- TO ADD YOUR PHOTO:
-     1. Upload your nature walk photo to your GitHub repository
-     2. Name it: nature-walk.jpg
-     3. The image will appear automatically here once uploaded -->
-<div class="post-hero-image">
-  <img src="nature-walk.jpg" alt="Jordan Maher looking up at trees during a nature walk" />
-</div>
+<section class="post-body">
+  <div class="wrap narrow prose">
+    <figure class="post-figure">
+      <img src="nature-walk.jpg" alt="Jordan Maher looking up at trees during a walk outside">
+    </figure>
 
-<div class="post-body">
+    <p>I've been taking walks in nature for years. Multiple times a day, sometimes. During tedious projects when my brain starts to fog. During stressful seasons when everything feels like too much. During the kind of stress that doesn't have an obvious source or an obvious fix. During burnout, when even the simplest tasks feel impossible. I didn't have a scientific framework for it. I just knew that something changed every time I stepped outside and let myself be in green space for a few minutes.</p>
+    <p>At some point I got curious enough to look it up. What I found was too good not to share.</p>
 
-  <p>I have been taking walks in nature for years. Multiple times a day, sometimes. During tedious projects when my brain starts to fog. During stressful seasons when everything feels like too much. During the kind of stress that does not have an obvious source or an obvious fix. During burnout when even the simplest tasks feel impossible. I did not have a scientific framework for it. I just knew that something shifted every single time I stepped outside and let myself be in green space for a few minutes.</p>
+    <h2>I didn't expect the research to be <em>this specific</em></h2>
+    <p>There's a psychological theory called Attention Restoration Theory, developed by researchers Rachel and Stephen Kaplan. The idea is this: screens, open offices, and busy streets demand what they call directed attention. The focused, effortful kind you use when you're solving problems, managing tasks, and making decisions. That resource runs down over the day. And when it runs out, you don't just feel tired. You become more impulsive, more irritable, and less able to focus or think ahead.</p>
+    <p>Natural settings work differently. They hold your attention gently, which gives the effortful kind a chance to recover. Researchers call this soft fascination: the easy attention you give to moving leaves or birdsong. It asks almost nothing of you. And that's exactly the point.</p>
 
-  <p>At some point I got curious enough to actually look it up. What I found was too good not to share.</p>
+    <h2>The stress numbers are <em>hard to ignore</em></h2>
+    <p>Researchers at the University of Michigan asked people to spend time in nature several times a week for eight weeks and measured cortisol, the body's main stress hormone, through saliva samples. About 20 minutes was enough for a meaningful drop, with the biggest benefit between 20 and 30 minutes. They measured a 21.3 percent per hour drop in cortisol beyond its normal daily decline.</p>
+    <p>A small 2024 study compared walking a green, tree-lined path with walking along an urban road. Cortisol fell on both walks, but by 53 percent on average on the green path, compared with 37 percent on the city road. The setting matters, not just the movement.</p>
 
-  <h2>I Did Not Expect the Research to Be <em>This Specific</em></h2>
+    <h2>What this may mean <em>for women</em></h2>
+    <p>A 2022 study looked at activity in the amygdala, the part of the brain involved in processing stress, before and after a one-hour walk in either a forest or a busy city area. Activity went down after the walk in nature, and the drop showed up in women but not in men. The researchers suggested women may benefit more from time in nature.</p>
+    <p>One study isn't the final word. But for women carrying burnout or a long season of stress, that's worth knowing. The walk isn't only a nice-to-have. It may be one of the simplest tools you have.</p>
 
-  <p>There is a formal psychological theory called Attention Restoration Theory, developed by researchers Rachel and Stephen Kaplan. The premise is this: modern environments, screens, open offices, city streets, demand what they call directed attention. The focused, effortful kind. The kind you use when you are problem-solving, managing tasks, navigating decisions. That resource is finite. It depletes throughout the day. And when it runs out, you do not just feel tired. You become impulsive, irritable, and less able to focus or think long-term.</p>
+    <p class="pull">"The walk isn't the break from the work. It's what makes the work possible."</p>
 
-  <p>Natural environments work differently. They engage attention in a less demanding way, allowing the brain's directed attention systems to recover. Your brain shifts into what researchers call soft fascination, the effortless attention your brain gives to moving leaves or birdsong. It requires almost nothing from you. And that is exactly the point.</p>
+    <h2>How I actually <em>use this</em></h2>
+    <p>I don't save my walks for after I finish work. I use them as part of how I work.</p>
+    <p>When I hit a wall mid-task, I go outside. When I've been on calls for two hours, I go outside. When I feel the particular kind of tired that sleep doesn't fix, I go outside. Even ten minutes changes something. The mental static clears. I come back to my desk with a different quality of attention than I left with.</p>
+    <p>I've also found that the boring tasks, the ones that feel hardest to start, go better when I break them up with a few minutes in green space. The research points the same way: the benefit tends to be bigger for people who are already worn out.</p>
+    <p>That means the moments you most want to push through are often the exact moments you most need to step away.</p>
 
-  <h2>The Cortisol Numbers Are <em>Hard to Ignore</em></h2>
+    <h2>The practical <em>takeaway</em></h2>
+    <p>You don't need a forest or a hiking trail. Much of this research took place in parks, green paths near workplaces, and city green spaces. What matters is that you're outside, near something natural, without your phone pulling your attention somewhere else.</p>
+    <p>Start with 15 minutes. Step away from the screen. Leave the podcast at home. Let your mind do the easy thing for a few minutes.</p>
+    <p><strong>You were built for this. Give yourself a few minutes of it.</strong></p>
 
-  <p>Just 20 minutes in a nature setting was enough to significantly reduce cortisol levels. The greatest rate of reduction happened between 20 and 30 minutes of sitting or walking outdoors. Researchers at the University of Michigan measured this through saliva samples across an eight-week study and found that a nature experience produced a 21.3 percent per hour drop in cortisol beyond the hormone's normal daily decline.</p>
+    <div class="post-author">
+      <img src="headshot.jpg" alt="Jordan Maher">
+      <div>
+        <p class="name">Jordan Maher</p>
+        <p>Jordan is the founder of Seeded in Curiosity, where she guides women who feel stuck in their career, relationships, or what comes next. Her approach is grounded in motivational interviewing and years of work in behavioral health, and she has lived what she writes about.</p>
+      </div>
+    </div>
 
-  <p>For context: cortisol is the stress hormone your body releases when it perceives threat. Chronic elevation affects sleep, hormones, digestion, mood, and immune function. We are not talking about a wellness trend. We are talking about a measurable biological shift that happens in your body within minutes of being outside.</p>
-
-  <p>A 2024 study measuring cortisol via saliva samples before and after nature walks found that walking a green road reduced cortisol by 53 percent on average, compared to 37 percent for walking along an urban road. The environment itself matters, not just the movement.</p>
-
-  <h2>What This Means <em>Specifically for Women</em></h2>
-
-  <p>A 2022 study examined the effects of a one-hour walk in a natural versus urban environment on activity in the amygdala, the brain region associated with stress processing. Researchers found that amygdala activity decreased after the walk in nature, but only in women, suggesting that women may benefit more from nature's stress-reducing effects than men.</p>
-
-  <p>Read that again. The stress-processing region of the brain responded to nature differently by sex. Women showed measurable changes in brain activity after a nature walk that men did not. The researchers noted that women may simply profit more from nature as a tool for nervous system regulation.</p>
-
-  <p>For women navigating burnout, hormonal shifts, inattentive ADHD, or chronic stress, this is not a small finding. It means the walk is not a nice-to-have. It is a biological need that your system is specifically wired to respond to.</p>
-
-  <div class="pull-quote">
-    <p>"The walk is not the break from the work. It is what makes the work possible."</p>
+    <p class="post-next"><a class="text-link" href="blog-spending-loop.html">Next: The $10 coffee when you're in debt</a></p>
   </div>
+</section>
 
-  <h2>What It Does for <em>an ADHD Brain</em></h2>
-
-  <p>Research found that a 20-minute walk through a park was as effective for children with ADHD as methylphenidate, a common stimulant medication, for temporarily improving concentration. The proposed mechanism is the same: nature gives the directed attention system a break and allows it to restore.</p>
-
-  <p>For adults with inattentive ADHD specifically, the constant effort required to stay focused on tasks that do not feel stimulating is genuinely exhausting. It is not laziness. It is a nervous system running on depleted resources. Green space exposure may help mitigate concentration difficulties associated with ADHD because the natural environment allows people to interact through soft fascination, which is effortless, in contrast to environments that require directed attention and may erode the capacity to focus.</p>
-
-  <p>The walk is not a distraction. It is the reset that makes the work possible.</p>
-
-  <h2>How I Actually <em>Use This</em></h2>
-
-  <p>I do not save my walks for after I finish work. I use them as part of how I work.</p>
-
-  <p>When I hit a wall mid-task, I go outside. When I have been on calls for two hours, I go outside. When I feel the particular kind of tired that sleep does not fix, I go outside. Even ten minutes changes something. The mental static clears. I come back to my desk with a different quality of attention than I left with.</p>
-
-  <p>I have also found that the mundane tasks, the ones that feel hardest to start, go better when I break them up with movement in green space. The research backs this up: the nature restoration effect is larger for fatigued samples, meaning the more depleted you are when you step outside, the more benefit you receive.</p>
-
-  <p>That means the moments you most want to push through are often the exact moments you most need to step away.</p>
-
-  <h2>The Practical <em>Takeaway</em></h2>
-
-  <p>You do not need a forest or a hiking trail. Research was conducted in parks, green corridors near workplaces, and urban green spaces. What matters is that you are outside, in contact with something natural, without your phone pulling your attention somewhere else.</p>
-
-  <p>Start with 15 minutes. Step away from the screen. Leave the podcast at home. Let your brain do the effortless thing for a few minutes.</p>
-
-  <p><strong>Your nervous system has been waiting for this. It turns out, it was built for it.</strong></p>
-
-  <div class="divider"></div>
-
-  <div class="author-box">
-    <p class="author-box-label">About the author</p>
-    <p class="author-box-name">Jordan Maher</p>
-    <p>Jordan is the founder of Seeded in Curiosity, a holistic wellness coaching practice for women. She works at the intersection of behavioral health, nervous system regulation, and whole-person wellness, and she has lived what she writes about.</p>
-    <a href="intake.html" class="author-box-cta">Learn to understand your body and finally ask the right questions. Book a free discovery call with Jordan.</a>
-  </div>
-
-  <div class="next-posts">
-    <p class="next-posts-label">Continue reading</p>
-    <div class="next-grid">
-      <a href="blog-spending-loop.html" class="next-card">
-        <p class="next-card-eyebrow">Psychology of behavior</p>
-        <h3>The $10 Coffee When You're in Debt</h3>
-        <p>You know it doesn't make sense. You do it anyway. The psychology behind why we dig the hole deeper when we feel most stuck.</p>
-      </a>
-      <a href="blog-curiosity-diagnosis.html" class="next-card">
-        <p class="next-card-eyebrow">Hormones and Women's Health</p>
-        <h3>Curiosity as a Diagnosis</h3>
-        <p>I spent years being told my symptoms were normal. They were not. Here is what happened when I started asking better questions.</p>
-      </a>
+<section class="band cta">
+  <div class="wrap narrow">
+    <p class="eyebrow">Ready when you are</p>
+    <h2>Need room to <em>think it through?</em></h2>
+    <p class="lede">When you're ready, book a free 20-minute intro call. No pressure and no pitch, just a real conversation about where you are.</p>
+    <div class="btn-row">
+      <a class="btn btn-light" href="https://calendar.app.google/WKxrUqDKMEF12j2i7">Book your free intro call</a>
     </div>
   </div>
+</section>
 
-</div>
-
-<footer>
-  <p>© 2026 <span>Seeded in Curiosity</span> &nbsp;·&nbsp; Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="index.html"><img class="logo-mark" src="logo-mark-light.svg" alt="" width="28" height="40">Seeded in <span>Curiosity</span></a>
+        <p style="margin-top:0.75rem;max-width:22em">For capable women who feel stuck and are ready to find their own way forward.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="work-with-me.html">Work with me</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="mailto:jordan@seededincuriosity.com">jordan@seededincuriosity.com</a></li>
+      </ul>
+    </div>
+    <p class="footer-fine">© 2026 Seeded in Curiosity · Jordan Maher. My work is guidance and education, not therapy, medical, or psychological treatment. If you're in crisis, call or text 988 (US).</p>
+  </div>
 </footer>
 
+<script>
+  const t = document.querySelector('.menu-toggle'), l = document.getElementById('nav-links');
+  t.addEventListener('click', () => { const o = l.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+</script>
 </body>
 </html>

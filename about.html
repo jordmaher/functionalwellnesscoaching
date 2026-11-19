@@ -4,483 +4,108 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Jordan | Seeded in Curiosity</title>
+<meta name="description" content="Jordan Maher guides women who feel stuck in their career, relationships, or what comes next, using curiosity and motivational interviewing.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --sage: #7A9E7E;
-    --clay: #A0855B;
-    --terracotta: #B85C38;
-    --bark: #6B4E3D;
-    --cream: #F5F0E8;
-    --linen: #EDE8DE;
-    --soil: #2C2018;
-    --mist: #D4C9B8;
-    --white: #FDFAF6;
-  }
-
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'Inter', sans-serif;
-    background: var(--white);
-    color: var(--soil);
-    font-size: 16px;
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.25rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    background: rgba(253, 250, 246, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 0.5px solid var(--mist);
-    flex-wrap: wrap;
-  }
-
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    letter-spacing: 0.04em;
-    color: var(--soil);
-    text-decoration: none;
-  }
-
-  .nav-logo span { color: var(--sage); }
-
-  .nav-links {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .nav-links a {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    color: var(--bark);
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.15s;
-  }
-
-  .nav-links a:hover { color: var(--soil); }
-
-  .nav-cta {
-    font-size: 0.78rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--bark);
-    text-decoration: none;
-    font-weight: 400;
-    padding: 0.55rem 1.2rem;
-    border: 0.5px solid var(--terracotta);
-    border-radius: 2px;
-    transition: all 0.2s;
-  }
-
-  .nav-cta:hover { background: var(--terracotta); color: var(--white); }
-
-  .about-hero {
-    padding: 8rem 2.5rem 4rem;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .about-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 400;
-    margin-bottom: 1.25rem;
-  }
-
-  .about-hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--soil);
-    margin-bottom: 1.5rem;
-  }
-
-  .about-hero-title em { font-style: italic; color: var(--terracotta); }
-
-  section { padding: 5rem 2.5rem; }
-
-  .container { max-width: 960px; margin: 0 auto; }
-
-  .section-eyebrow {
-    font-size: 0.7rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-weight: 400;
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    font-weight: 500;
-    line-height: 1.2;
-    color: var(--soil);
-    margin-bottom: 1.5rem;
-  }
-
-  .section-title em { font-style: italic; color: var(--terracotta); }
-
-  /* PROFILE */
-  .profile { background: var(--white); }
-
-  .profile-layout {
-    display: grid;
-    grid-template-columns: 1fr 1.6fr;
-    gap: 5rem;
-    align-items: start;
-  }
-
-  .profile-left { position: sticky; top: 6rem; }
-
-  .profile-photo {
-    width: 100%;
-    max-width: 280px;
-    border-radius: 2px;
-    margin-bottom: 1.5rem;
-    display: block;
-  }
-
-  .profile-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--soil);
-    margin-bottom: 0.25rem;
-  }
-
-  .profile-title {
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 1.5rem;
-  }
-
-  .credentials { list-style: none; padding: 0; margin-bottom: 2rem; }
-
-  .credentials li {
-    font-size: 0.85rem;
-    color: var(--bark);
-    padding: 0.5rem 0;
-    border-bottom: 0.5px solid var(--linen);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-    line-height: 1.5;
-  }
-
-  .credentials li::before {
-    content: '';
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--sage);
-    flex-shrink: 0;
-    margin-top: 0.5rem;
-  }
-
-  .profile-right p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: var(--soil);
-    margin-bottom: 1.25rem;
-    font-weight: 300;
-  }
-
-  .profile-right p strong { font-weight: 500; color: var(--bark); }
-
-  /* STORY */
-  .story-section { background: var(--linen); }
-
-  .story-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-
-  .story-text p {
-    font-size: 1rem;
-    line-height: 1.9;
-    color: var(--soil);
-    margin-bottom: 1.25rem;
-    font-weight: 300;
-  }
-
-  .story-text p strong { font-weight: 500; color: var(--bark); }
-
-  .story-quote {
-    background: var(--white);
-    padding: 2.5rem;
-    border-left: 2px solid var(--sage);
-    border-radius: 0 2px 2px 0;
-  }
-
-  .story-quote blockquote {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 300;
-    color: var(--bark);
-    line-height: 1.5;
-    margin-bottom: 1rem;
-  }
-
-  .story-quote cite {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sage);
-    font-style: normal;
-  }
-
-  /* EXPERIENCE */
-  .experience { background: var(--white); }
-
-  .exp-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-  }
-
-  .exp-card {
-    background: var(--linen);
-    border: 0.5px solid var(--mist);
-    border-radius: 2px;
-    padding: 1.75rem;
-  }
-
-  .exp-card-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--sage);
-    margin-bottom: 0.5rem;
-  }
-
-  .exp-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: var(--bark);
-    margin-bottom: 0.75rem;
-    line-height: 1.3;
-  }
-
-  .exp-card p {
-    font-size: 0.88rem;
-    color: var(--soil);
-    opacity: 0.8;
-    line-height: 1.7;
-  }
-
-  /* BOOKING */
-  .booking { background: var(--linen); text-align: center; }
-  .booking .container { max-width: 640px; }
-
-  .booking-sub {
-    font-size: 1rem;
-    color: var(--bark);
-    margin-bottom: 2.5rem;
-    line-height: 1.8;
-  }
-
-  .booking-cta {
-    display: block;
-    max-width: 320px;
-    margin: 0 auto 1.25rem;
-    background: var(--terracotta);
-    color: var(--cream);
-    text-decoration: none;
-    padding: 1.1rem 2.8rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 2px;
-    transition: all 0.2s;
-  }
-
-  .booking-cta:hover { background: var(--soil); }
-
-  .booking-cta-secondary {
-    display: block;
-    max-width: 320px;
-    margin: 0 auto 1.25rem;
-    background: transparent;
-    color: var(--bark);
-    border: 0.5px solid var(--sage);
-    text-decoration: none;
-    padding: 1rem 2.8rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    font-weight: 400;
-    border-radius: 2px;
-    transition: all 0.2s;
-  }
-
-  .booking-cta-secondary:hover { background: var(--sage); color: var(--soil); }
-
-  .booking-note {
-    font-size: 0.8rem;
-    color: var(--clay);
-    letter-spacing: 0.05em;
-  }
-
-  footer {
-    background: var(--soil);
-    color: var(--mist);
-    padding: 2.5rem;
-    text-align: center;
-    font-size: 0.8rem;
-    letter-spacing: 0.05em;
-  }
-
-  footer span { color: var(--sage); }
-
-  @media (max-width: 768px) {
-    nav { padding: 1rem 1.25rem; }
-    .about-hero { padding: 6rem 1.25rem 2.5rem; }
-    section { padding: 3.5rem 1.25rem; }
-    .profile-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-    .profile-left { position: static; }
-    .story-layout { grid-template-columns: 1fr; gap: 2.5rem; }
-  }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=2026-11-19f">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
-<nav>
-  <a href="index.html" class="nav-logo">Seeded in <span>Curiosity</span></a>
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="blog.html">Journal</a>
-    <a href="intake.html" class="nav-cta">Work with me</a>
+<nav class="nav">
+  <div class="wrap">
+    <a class="logo" href="index.html"><img class="logo-mark" src="logo-mark.svg" alt="" width="28" height="40">Seeded in <span>Curiosity</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work-with-me.html">Work with me</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      <li><a href="blog.html">Journal</a></li>
+      <li><a class="btn" href="https://calendar.app.google/WKxrUqDKMEF12j2i7">Book a free call</a></li>
+    </ul>
   </div>
 </nav>
 
-<div class="about-hero">
-  <p class="about-eyebrow">About Jordan</p>
-  <h1 class="about-hero-title">The woman behind<br><em>Seeded in Curiosity</em></h1>
-</div>
+<header class="page-head">
+  <div class="wrap narrow">
+    <p class="eyebrow">About Jordan</p>
+    <h1>I was good at the work. I was best at <em>the people.</em></h1>
+  </div>
+</header>
 
-<!-- PROFILE -->
-<section class="profile">
-  <div class="container">
-    <div class="profile-layout">
-      <div class="profile-left">
-        <img src="headshot.jpg" alt="Jordan Maher, founder of Seeded in Curiosity" class="profile-photo">
-        <h2 class="profile-name">Jordan Maher</h2>
-        <p class="profile-title">Founder, Seeded in Curiosity</p>
-        <ul class="credentials">
-          <li>Clinical Partnerships, Behavioral Health</li>
-          <li>Motivational Interviewing, Psychwire (in progress)</li>
-          <li>Peer Mentor, Charlie Health (2 years)</li>
-          <li>Coaching and Communication, ISU Professional Sales Team</li>
-          <li>Mental Health Access Advocate</li>
-          <li>Holistic Wellness and Women's Empowerment</li>
-        </ul>
-      </div>
-      <div class="profile-right">
-        <p>I came into behavioral health because I believe access to care is a human right. Growing up in a small town with none of it taught me that early. It also taught me what it feels like to figure things out without a roadmap.</p>
-        <p>I have spent years in the clinical world building real relationships across the behavioral health ecosystem. Along the way, the whole-person wellness space kept pulling me closer. <strong>I am not a believer in coincidences.</strong></p>
-        <p>My approach is grounded in motivational interviewing, a framework that believes you are the expert on your own life. I am not here to hand you a plan. <strong>I am here to ask better questions until you find what is already true for you.</strong></p>
-        <p>I am building this for the woman who is capable, curious, and still somehow stuck. The one who has tried all the surface-level fixes. The one who suspects the answer lives somewhere deeper. <strong>You are in the right place.</strong></p>
+<section style="padding-top:0">
+  <div class="wrap about-grid">
+    <aside class="about-side">
+      <img src="headshot.jpg" alt="Jordan Maher">
+      <p class="about-name">Jordan Maher</p>
+      <p class="about-role">Founder, Seeded in Curiosity</p>
+      <ul class="creds">
+        <li>Trained in motivational interviewing</li>
+        <li>Years of partnership work in behavioral health</li>
+        <li>Guided colleagues through high-pressure roles</li>
+        <li>Professional Sales and Integrated Marketing Communications, Illinois State University</li>
+        <li>Mental health access advocate</li>
+      </ul>
+    </aside>
+
+    <div class="prose">
+      <h2>Where this comes from</h2>
+      <p>I've always been fascinated by people: why we do what we do, what holds us back, what finally helps us move. Psychology was my first love. But I let sensible advice steer me toward a more practical path, and I spent years in sales.</p>
+      <p>Those years taught me a lot, including what I'm actually good at. It was never the selling. It was the people: getting curious about someone, listening closely, and helping them see strengths they couldn't see themselves.</p>
+      <p>But that was never the main part of the job. Most days were filled with work that pulled me away from it, and I kept arriving at the same quiet question: <strong>what would it look like to build my work around what I do best?</strong></p>
+      <p>Over the past few years, as I stopped trying to fit someone else's mold and leaned into how I'm naturally made, things got clearer. And people started telling me the same thing: friends, colleagues, people I'd mentored. <em>You should be doing this on your own. Helping people get unstuck. Making them feel seen and heard.</em></p>
+      <p>I heard it enough times that I finally listened. <strong>This is what I'm meant to do with my time.</strong></p>
+
+      <p class="pull">"Real change starts when someone finally feels seen, not just told what to do."</p>
+
+      <h2>Why I do this work</h2>
+      <p>I grew up in a town of 700 people where support of almost any kind was hard to find. I learned early what it feels like to figure things out without a roadmap. That's shaped everything about why I care so much about people having someone in their corner.</p>
+      <p>For years I've built relationships across the behavioral health world and mentored colleagues through demanding, high-pressure work. Over and over I've watched capable people get stuck, not because they lacked ability, but because they were spending their days on work that didn't use it, and no one had helped them slow down and listen to themselves.</p>
+
+      <h2>How I show up</h2>
+      <p>My approach is grounded in motivational interviewing, a framework built on the belief that <strong>you are the expert on your own life.</strong> I won't hand you a plan. I'll listen closely, reflect back what I hear, ask honest questions, and help you find what's already true for you.</p>
+      <p>People tell me I'm warm, and I am. I'm also direct. If I see you getting in your own way, I'll say so, kindly. I believe in faith, in meaning, and in the idea that the hard seasons are often where we grow the most.</p>
+      <h2>A few things <em>about me</em></h2>
+      <ul class="about-things">
+        <li>I believe there's something bigger than all of us that connects us, and that each of us has been given our own strengths and purpose.</li>
+        <li>I take walks outside most days, often more than once. It's where I do my best thinking.</li>
+        <li>In 2027 my fiancé and I are moving into an Airstream to travel the country, and I'll work from the road.</li>
+        <li>I'd always choose one real conversation over a big crowd.</li>
+      </ul>
+
+      <p>I'm building this for the woman who is capable, curious, and still somehow stuck. If that's you, you're in the right place.</p>
+      <div class="btn-row">
+        <a class="btn" href="https://calendar.app.google/WKxrUqDKMEF12j2i7">Book your free intro call</a>
+        <a class="btn btn-ghost" href="work-with-me.html">Explore the offers</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STORY -->
-<section class="story-section">
-  <div class="container">
-    <div class="story-layout">
-      <div class="story-text">
-        <p class="section-eyebrow">Where this comes from</p>
-        <h2 class="section-title">I grew up where<br><em>access didn't exist.</em></h2>
-        <p>I grew up in a town of 700 people where mental health care simply was not available. That shaped everything about why access to real, grounded support matters so deeply to me.</p>
-        <p>I have spent years in behavioral health, building clinical relationships that connect people to care. I have sat with hundreds of providers and families. And I kept seeing the same gap: people getting connected to clinical support while the deeper, whole-body pieces went completely untreated.</p>
-        <p>The relationship with your body. Your cycle. Your nervous system. Your patterns around food, rest, spending, and perfectionism. <strong>Nobody was addressing the root.</strong></p>
-        <p>I am currently training in motivational interviewing, a framework built on the belief that <strong>you already carry the answers inside you.</strong> My job is to ask the right questions until you find them.</p>
-      </div>
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
       <div>
-        <div class="story-quote">
-          <blockquote>"Real transformation happens when someone finally feels seen, not just treated."</blockquote>
-          <cite>Jordan Maher, founder</cite>
-        </div>
+        <a class="logo" href="index.html"><img class="logo-mark" src="logo-mark-light.svg" alt="" width="28" height="40">Seeded in <span>Curiosity</span></a>
+        <p style="margin-top:0.75rem;max-width:22em">For capable women who feel stuck and are ready to find their own way forward.</p>
       </div>
+      <ul class="footer-links">
+        <li><a href="work-with-me.html">Work with me</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Journal</a></li>
+        <li><a href="mailto:jordan@seededincuriosity.com">jordan@seededincuriosity.com</a></li>
+      </ul>
     </div>
+    <p class="footer-fine">© 2026 Seeded in Curiosity · Jordan Maher. My work is guidance and education, not therapy, medical, or psychological treatment. If you're in crisis, call or text 988 (US).</p>
   </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="experience">
-  <div class="container">
-    <p class="section-eyebrow">Where this comes from</p>
-    <h2 class="section-title">Built from real experience,<br><em>not just theory.</em></h2>
-    <div class="exp-grid">
-      <div class="exp-card">
-        <p class="exp-card-label">Behavioral health</p>
-        <h3>Years of clinical partnership work</h3>
-        <p>Building referral relationships across the behavioral health ecosystem, working alongside therapists, counselors, psychiatrists, and community organizations to connect people to the care they need.</p>
-      </div>
-      <div class="exp-card">
-        <p class="exp-card-label">Mentorship</p>
-        <h3>Peer mentor, Charlie Health</h3>
-        <p>Trusted to develop and support colleagues navigating the demands of high-pressure clinical outreach work. Mentoring is where the coaching instinct was sharpened into something real.</p>
-      </div>
-      <div class="exp-card">
-        <p class="exp-card-label">Communication and coaching</p>
-        <h3>ISU Professional Coaching Team</h3>
-        <p>Two years training in the art of understanding people, building trust quickly, and guiding someone toward clarity. The skills that made me good at that work are the same ones at the heart of every coaching session I run today.</p>
-      </div>
-      <div class="exp-card">
-        <p class="exp-card-label">Advocacy</p>
-        <h3>Mental health access and policy</h3>
-        <p>Identified a gap in Medicaid access in my community, met with state legislators, got invited to the Capitol, and personally brokered an introduction to advocate for expanded coverage. This work taught me that access is not just a value I hold. It is something I act on.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BOOKING -->
-<section class="booking" id="booking">
-  <div class="container">
-    <p class="section-eyebrow">Ready to begin</p>
-    <h2 class="section-title">Let's find the<br><em>root of it.</em></h2>
-    <p class="booking-sub">Book a free 20-minute discovery call. No pressure, no pitch. Just a real conversation about where you are and whether this feels like the right fit.</p>
-    <a href="intake.html" class="booking-cta">Fill out your intake form</a>
-    <a href="https://calendar.app.google/K45TQyQXRwY4kwnG8" class="booking-cta-secondary">Schedule a discovery call</a>
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 <span>Seeded in Curiosity</span> &nbsp;·&nbsp; Jordan Maher &nbsp;·&nbsp; Holistic Wellness Coaching for Women</p>
 </footer>
 
+<script>
+  const t = document.querySelector('.menu-toggle'), l = document.getElementById('nav-links');
+  t.addEventListener('click', () => { const o = l.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+</script>
 </body>
 </html>
